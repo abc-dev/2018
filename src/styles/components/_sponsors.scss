@@ -1,0 +1,30 @@
+.sponsors {
+  margin: space(xlarge) auto;
+  text-align: center;
+
+  h2,
+  h3 {
+    margin: space(large) auto;
+  }
+  h3 {
+    font-size: rem(24px);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: font-size(small);
+  }
+
+  .sponsor {
+    img {
+      margin: space(large) auto;
+      max-width: 240px;
+    }
+  }
+  .support {
+    img {
+      margin: space(large) auto;
+      max-width: 200px;
+    }
+  }
+}

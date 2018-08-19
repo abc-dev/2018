@@ -1,37 +1,175 @@
 .cover {
+  background: {
+    image: url(../images/backgrounds/sao-caetano-do-sul.jpg);
+    size: cover;
+    repeat: no-repeat;
+  }
+  color: white;
+
   position: relative;
 
-  height: 100vh;
+  height: 100%;
 
-  &::before {
+  @media (min-width: #{map-get($breakpoints, medium)}) {
+    background-image: url(../images/backgrounds/sao-bernardo-do-campo.jpg);
+    background-size: auto;
+    background-position: bottom right;
+    color: black;
+
+    height: 100vh;
+
+    z-index: layer(lowest);
+  }
+
+  &::before,
+  &::after {
     @include css-content(100%);
+    display: none;
+
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      display: block;
+    }
 
     position: absolute;
     z-index: layer(low);
+    width: 100%;
 
     background: {
-      image: url('#{$images-path}/parque-chico-mendes-scs.jpg');
+      color: rgb(121, 119, 121);
       size: cover;
       repeat: no-repeat;
-    };
-    opacity: .4;
+    }
+  }
+
+  &::before {
+    height: 60vh;
+    transform: skewY(10deg) translateY(-25vh);
+    background-image: url(../images/backgrounds/santo-andre.jpg);
+    background-position: center;
+  }
+  &::after {
+    background-image: url(../images/backgrounds/sao-caetano-do-sul.jpg);
+    transform: skewY(-10deg) translateY(-30vh);
+    height: 60vh;
   }
 
   > div {
     position: relative;
     z-index: layer(base);
-    text-align: center;
 
-    padding-top: rem(50px);
+    padding-top: rem(25px);
+
+    font-size: font-size(medium);
+    text-align: center;
+  }
+
+  time {
+    display: block;
+    margin: {
+      top: space(medium);
+      bottom: space(medium);
+    }
 
     font-size: font-size(large);
   }
 
-  time {
-    font-size: font-size(xlarge);
+  .logo {
+    display: block;
+    margin: {
+      top: space(xsmall);
+      bottom: space(xlarge);
+    }
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      margin: space(large) auto;
+    }
   }
 
-  .logo {
+  .intro {
+    h2 {
+      font-size: font-size(medium);
+      @media (min-width: #{map-get($breakpoints, medium)}) {
+        font-size: font-size(large);
+      }
+    }
+    .hamburguer {
+      background: #{map-get($brand-colors, secondary)};
+      border: 0;
+      outline: none;
+      position: absolute;
 
+      top: rem(55px);
+      right: rem(20px);
+
+      height: rem(5px);
+      width: rem(30px);
+
+      transition: background-color 0.2s linear;
+
+      z-index: layer(highest);
+
+      &:before,
+      &:after {
+        background: #{map-get($brand-colors, secondary)};
+
+        content: "";
+
+        position: absolute;
+        right: 0;
+
+        height: rem(5px);
+        width: rem(30px);
+
+        transition: transform 0.4s ease-in-out;
+      }
+      &:before {
+        top: rem(-10px);
+      }
+      &:after {
+        top: rem(10px);
+      }
+      @media (min-width: #{map-get($breakpoints, medium)}) {
+        display: none;
+      }
+    }
+
+    .hamburguer.is-active {
+      background: transparent;
+
+      position: fixed;
+
+      &:before,
+      &:after {
+        top: 0;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    a {
+      display: block;
+      margin: space(xlarge) auto;
+      padding: rem(12px);
+
+      width: rem(200px);
+
+      background: #{map-get($brand-colors, primary)};
+      border-radius: rem(5px);
+      color: #{map-get($brand-colors, secondary)};
+      text-transform: uppercase;
+    }
+
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      position: absolute;
+      left: 0;
+      top: 30vh;
+
+      max-width: rem(800px);
+    }
   }
 }

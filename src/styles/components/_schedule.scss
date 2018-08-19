@@ -1,0 +1,80 @@
+.schedule {
+  background: #{map-get($brand-colors, secondary)};
+  color: white;
+  text-align: center;
+
+  margin: space(xlarge) auto;
+  padding: space(large) 0;
+
+  .wrapper {
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      display: flex;
+    }
+  }
+  p {
+    margin: space(medium) 0;
+  }
+
+  .track {
+    margin: space(xlarge) auto;
+
+    position: relative;
+
+    &:after {
+      content: "";
+      background: #{map-get($brand-colors, primary)};
+      border-radius: 50%;
+      position: absolute;
+      width: rem(20px);
+      height: rem(20px);
+
+      top: 100%;
+      left: 50%;
+
+      transform: translateX(-50%) translateY(50%);
+    }
+
+    h4 {
+      font-size: font-size(large);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      max-width: rem(350px);
+      &:after {
+        top: 50%;
+        left: 100%;
+
+        transform: translateX(50%) translateY(100%);
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+
+  .track-info {
+    margin: space(small) auto;
+    padding: space(medium);
+
+    position: relative;
+
+    h5 {
+      font-size: font-size(large);
+    }
+
+    p {
+      font-size: font-size(large);
+    }
+
+    a {
+      color: white;
+      font-weight: bold;
+    }
+
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      margin: space(large) auto;
+    }
+  }
+}

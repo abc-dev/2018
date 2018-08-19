@@ -1,0 +1,32 @@
+.speakers {
+  margin: space(xlarge) auto;
+  text-align: center;
+
+  h2 {
+    margin: space(large) auto;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .speaker {
+    max-width: rem(260px);
+    margin: space(medium) auto;
+    .speaker-image {
+      height: rem(360px);
+      width: rem(260px);
+
+      overflow: hidden;
+    }
+    .speaker-info {
+      margin: space(small) auto;
+      h4 {
+        font-size: font-size(large);
+      }
+      a {
+        margin: space(small) space(xsmall);
+      }
+    }
+  }
+}

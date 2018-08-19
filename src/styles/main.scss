@@ -1,17 +1,32 @@
-@import './import-core-tools';
-@import './import-core-settings';
-@import './objects/reset';
-@import './components/header';
-@import './components/main-nav';
+@import "./import-core-tools";
+@import "./import-core-settings";
+@import "./objects/reset";
+@import "./components/header";
+@import "./components/main-nav";
+@import "./components/about";
+@import "./components/speakers";
+@import "./components/schedule";
+@import "./components/location";
+@import "./components/sponsors";
+@import "./components/contact";
+@import "./components/footer";
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: color(dark);
 }
 
 h1 {
-  font-size: font-size(xxlarge);
+  font-size: font-size(xlarge);
+  text-transform: uppercase;
 }
 h2 {
   font-size: font-size(xlarge);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
 }

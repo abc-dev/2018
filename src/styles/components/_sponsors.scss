@@ -12,19 +12,35 @@
   }
 
   p {
-    font-size: font-size(small);
+    font-size: font-size(medium);
   }
 
-  .sponsor {
+  .sponsor,
+  .support {
+    @media (min-width: #{map-get($breakpoints, medium)}) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      margin: space(medium) auto;
+
+      max-width: rem(1080px);
+    }
+
+    figure {
+      margin: space(xlarge) auto;
+      max-height: 300px;
+      width: 240px;
+    }
+
     img {
-      margin: space(large) auto;
-      max-width: 240px;
+      width: 100%;
     }
   }
   .support {
     img {
       margin: space(large) auto;
-      max-width: 200px;
+      max-width: 180px;
     }
   }
 }

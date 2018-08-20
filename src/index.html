@@ -48,7 +48,7 @@
       </nav>
       <div class="intro">
         <img class="logo" src="images/logo-abcdev.svg" alt="Logo ABCDev">
-        <button class="hamburguer"></button>
+        <button id="hamburguer" class="hamburguer"></button>
         <h1>ABC-Dev 2018</h1>
         <h2>3ª edição da
           <b>maior conferência</b> sobre desenvolvimento de software do Grande ABC</h2>
@@ -129,13 +129,14 @@
       <h2>Palestrantes</h2>
       <p>Estas são as pessoas desenvolvedoras que aceitaram compartilhar seu conhecimento no ABC-Dev</p>
 
-      <div>
+      <div class="all-speaker">
+        <!-- LARISSA ABREU -->
         <article class="speaker">
           <div class="speaker-image" href="#">
-            <img src="images/speakers/carol-soares.jpg" alt="Carol Soares">
+            <img src="images/speakers/carol-soares.jpg" alt="Larissa Abreu">
           </div>
           <div class="speaker-info">
-            <h4>Carol Soares</h4>
+            <h4>Larissa Abreu</h4>
             <div class="social-media">
               <a href="https://github.com/abc-dev" title="Link para o Github do abc-dev">
                 <img src="images/svg/icons/social/github-logo.svg" alt="Github">
@@ -150,8 +151,40 @@
                 <img src="images/svg/icons/social/facebook-logo.svg" alt="Facebook">
               </a>
             </div>
+            <p>
+              Front-end developer, web platform evangelist e cantora nas horas vagas. Atua no desenvolvimento de componentes nativos e
+              escreve testes automatizados xD
+            </p>
           </div>
         </article>
+        <!-- PAMELA IUPI PEIXINHO -->
+        <article class="speaker">
+          <div class="speaker-image" href="#">
+            <img src="images/speakers/carol-soares.jpg" alt="Pamela Iupi Peixinho">
+          </div>
+          <div class="speaker-info">
+            <h4>Pamela Iupi Peixinho</h4>
+            <div class="social-media">
+              <a href="https://github.com/abc-dev" title="Link para o Github do abc-dev">
+                <img src="images/svg/icons/social/github-logo.svg" alt="Github">
+              </a>
+              <a href="https://twitter.com/abc_developers" title="Link para o Twitter do abc-dev">
+                <img src="images/svg/icons/social/twitter-logo.svg" alt="Twitter">
+              </a>
+              <a href="https://www.instagram.com/abcdevelopers/" title="Link para o Instagram do abc-dev">
+                <img src="images/svg/icons/social/instagram-logo.svg" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com/abcdevelopers/" title="Link para o Facebook do abc-dev">
+                <img src="images/svg/icons/social/facebook-logo.svg" alt="Facebook">
+              </a>
+            </div>
+            <p>
+              Sou a Pamela Peixinho.. "e minha praia é codar". Brincadeiras à parte, tenho 22 anos, sou formada em Ciência da Computação
+              na FEI e Software Engineer na startup QuintoAndar.
+            </p>
+          </div>
+        </article>
+        <!-- CAROL SOARES -->
         <article class="speaker">
           <div class="speaker-image" href="#">
             <img src="images/speakers/carol-soares.jpg" alt="Carol Soares">
@@ -172,6 +205,38 @@
                 <img src="images/svg/icons/social/facebook-logo.svg" alt="Facebook">
               </a>
             </div>
+            <p>
+              Desenvovedora front end freelancer, professora de programação e entusiasta de novas tecnologias. Curso Sistemas para internet,
+              produzo conteúdo de tecnologia através do medium, newsletter e pelo Lovelace Podcast. #50HackersToFollow pela
+              Gama Academy. Acredito na tecnologia como ferramenta de empoderamento social e trabalho para isso. Compatibilidade
+              com o leitor de tela ativada.
+            </p>
+          </div>
+        </article>
+        <!-- CAROLINA PASQUALE -->
+        <article class="speaker">
+          <div class="speaker-image" href="#">
+            <img src="images/speakers/carol-soares.jpg" alt="Carolina Pasquale">
+          </div>
+          <div class="speaker-info">
+            <h4>Carolina Pasquale</h4>
+            <div class="social-media">
+              <a href="https://github.com/abc-dev" title="Link para o Github do abc-dev">
+                <img src="images/svg/icons/social/github-logo.svg" alt="Github">
+              </a>
+              <a href="https://twitter.com/abc_developers" title="Link para o Twitter do abc-dev">
+                <img src="images/svg/icons/social/twitter-logo.svg" alt="Twitter">
+              </a>
+              <a href="https://www.instagram.com/abcdevelopers/" title="Link para o Instagram do abc-dev">
+                <img src="images/svg/icons/social/instagram-logo.svg" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com/abcdevelopers/" title="Link para o Facebook do abc-dev">
+                <img src="images/svg/icons/social/facebook-logo.svg" alt="Facebook">
+              </a>
+            </div>
+            <p>
+              Cientista da computação, organizadora da primeira edição do Rails Girls em Sorocaba. Full-stack developer no Cubo.
+            </p>
           </div>
         </article>
       </div>
@@ -182,68 +247,8 @@
     <h2>Programação</h2>
     <p>Este ano será muito especial, teremos trilhas! \o/</p>
     <div class="wrapper">
-
-      <!-- <table border="1">
-        <thead>
-          <tr>
-            <th>Horario</th>
-            <th>Ada Lovelace</th>
-            <th>Alan Turing</th>
-            <th>Grace Hopper</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>08:00 as 08:45</th>
-            <td colspan="3">
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-          </tr>
-          <tr>
-            <th>08:45 as 09:00</th>
-            <td colspan="3">
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-          </tr>
-          <tr>
-            <th>08:00 as 08:45</th>
-            <td>
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-            <td>
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-            <td rowspan="2">
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-          </tr>
-          <tr>
-            <th>08:00 as 08:45</th>
-            <td>
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-            <td>
-              <h4>Titulo palestra</h4>
-              <p>Descrição palestra</p>
-              <a href="#" class="speaker-name">Nome palestrante</a>
-            </td>
-          </tr>
-        </tbody>
-      </table> -->
       <article class="track">
-        <h4>[Trilha 1]</h4>
+        <h4>[Trilha Ada Lovelace]</h4>
         <div class="track-info">
           <h5>&lt;Palestra 1&gt;
             <br> 08:00</h5>
@@ -258,7 +263,7 @@
         </div>
       </article>
       <article class="track">
-        <h4>[Trilha 2]</h4>
+        <h4>[Trilha Alan Turing]</h4>
         <div class="track-info">
           <h5>&lt;Palestra 1&gt;
             <br> 08:00</h5>
@@ -273,7 +278,7 @@
         </div>
       </article>
       <article class="track">
-        <h4>[Trilha 3]</h4>
+        <h4>[Trilha Grace Hooper]</h4>
         <div class="track-info">
           <h5>&lt;Palestra 1&gt;
             <br> 08:00</h5>
@@ -308,7 +313,7 @@
   <section class="location" id="localizacao">
     <div class="wrapper">
       <h2>O local</h2>
-      <p>Um evento maravilhoso merece uma estrutura maravilhosa</p>
+      <p>Um evento maravilhoso merece uma estrutura maravilhosa!</p>
 
       <div>
         <h4>Auditório do Centro de tecnologia "Leandro Klein"</h4>
@@ -327,9 +332,21 @@
 
       <div class="sponsor">
         <figure>
-          <img src="images/logos/via-varejo.png" alt="Logo Via Varejo ">
+          <img src="images/logos/via-varejo.png" alt="Logo Via Varejo">
           <figcaption>
             <a title="Link para o site da Via Varejo " href="# ">Via Varejo</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/logos/vericode.png" alt="Logo Vericode">
+          <figcaption>
+            <a title="Link para o site da Vericode" href="# ">Vericode</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/logos/keep-it-simple-logo.png" alt="Logo Keep It Simple">
+          <figcaption>
+            <a title="Link para o site da Keep It Simple" href="# ">Keep It Simple</a>
           </figcaption>
         </figure>
       </div>
@@ -343,6 +360,18 @@
           <img src="images/logos/code-prestige-logo.png" alt="Logo Code Prestige">
           <figcaption>
             <a title="Link para o site da Code Prestige" href="# ">Code Prestige</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/logos/Nubank_Logo.png" alt="Logo Nubank">
+          <figcaption>
+            <a title="Link para o site da Nubank" href="# ">Nubank</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/logos/umbler logo.png" alt="Logo Umbler">
+          <figcaption>
+            <a title="Link para o site da Umbler" href="# ">Umbler</a>
           </figcaption>
         </figure>
       </div>

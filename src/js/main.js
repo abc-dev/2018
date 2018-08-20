@@ -2,10 +2,16 @@
 
 (function showMenu() {
   let menu = document.querySelector(".main-nav");
-  let menuHamburguer = document.querySelectorAll(".hamburguer");
-  menuHamburguer.forEach(btn => {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("is-active");
+  let menuHamburguer = document.getElementById("hamburguer");
+
+  menuHamburguer.addEventListener("click", () => {
+    menuHamburguer.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+  });
+
+  menu.childNodes.forEach(link => {
+    link.addEventListener("click", () => {
+      menuHamburguer.classList.toggle("is-active");
       menu.classList.toggle("is-active");
     });
   });

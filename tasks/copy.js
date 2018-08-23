@@ -18,7 +18,7 @@ function copyHtmlTask() {
 
 function copyAssetsTask() {
   return gulp
-    .src(`{${config.assets}}/**/*`, { cwd: config.sourceDir })
+    .src([`{${config.assets}}/**/*`, '**/CNAME'], { cwd: config.sourceDir })
     .pipe(gulp.dest( config.buildDir ))
     .pipe(browserSync.reload({ stream: true }));
 }

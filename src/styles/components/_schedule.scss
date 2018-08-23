@@ -1,5 +1,5 @@
 .schedule {
-  background: #{map-get($brand-colors, secondary)};
+  background: color( secondary);
   color: white;
   text-align: center;
 
@@ -7,9 +7,9 @@
   padding: space(large) 0;
 
   .wrapper {
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      display: flex;
-    }
+    // @include respond-to(medium)  {
+    //   display: flex;
+    // }
   }
   p {
     margin: space(medium) 0;
@@ -22,7 +22,7 @@
 
     &:after {
       content: "";
-      background: #{map-get($brand-colors, primary)};
+      background: color( primary);
       border-radius: 50%;
       position: absolute;
       width: rem(20px);
@@ -40,18 +40,18 @@
       text-transform: uppercase;
     }
 
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      max-width: rem(350px);
-      &:after {
-        top: 50%;
-        left: 100%;
+    // @include respond-to(medium)  {
+    //   max-width: rem(350px);
+    //   &:after {
+    //     top: 50%;
+    //     left: 100%;
 
-        transform: translateX(50%) translateY(100%);
-      }
-      &:last-child:after {
-        display: none;
-      }
-    }
+    //     transform: translateX(50%) translateY(100%);
+    //   }
+    //   &:last-child:after {
+    //     display: none;
+    //   }
+    // }
   }
 
   .track-info {
@@ -73,8 +73,8 @@
       font-weight: bold;
     }
 
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      margin: space(large) auto;
-    }
+    // @include respond-to(medium)  {
+    //   margin: space(large) auto;
+    // }
   }
 }

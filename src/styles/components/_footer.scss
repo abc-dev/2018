@@ -1,6 +1,6 @@
 .footer {
-  background: #{map-get($brand-colors, secondary)};
-  color: #{map-get($brand-colors, primary)};
+  background: color( secondary);
+  color: color( primary);
   font-size: font-size(small);
   text-align: center;
 

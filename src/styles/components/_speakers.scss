@@ -3,11 +3,11 @@
 
   text-align: center;
 
-  @media (min-width: #{map-get($breakpoints, medium)}) {
-    color: white;
+  // @media (min-width: #{map-get($breakpoints, medium)) {
+  //   color: white;
 
-    padding-bottom: space(large);
-  }
+  //   padding-bottom: space(large);
+  // }
 
   h2 {
     margin: space(large) auto;
@@ -21,10 +21,10 @@
     margin: space(large) auto;
     max-width: rem(1080px);
 
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      display: flex;
-      flex-wrap: wrap;
-    }
+    // @media (min-width: #{map-get($breakpoints, medium)) {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    // }
   }
 
   .speaker {
@@ -36,32 +36,32 @@
     transition: filter 0.4s ease-in;
 
     &:nth-child(odd) {
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        top: rem(50px);
-      }
+      // @media (min-width: #{map-get($breakpoints, medium)) {
+      //   top: rem(50px);
+      // }
     }
 
     &:hover {
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        -webkit-filter: grayscale(1);
-        -moz-filter: grayscale(1);
-        filter: grayscale(1);
-      }
+      // @media (min-width: #{map-get($breakpoints, medium)) {
+      //   -webkit-filter: grayscale(1);
+      //   -moz-filter: grayscale(1);
+      //   filter: grayscale(1);
+      // }
     }
 
     &:hover > .speaker-info {
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        background: rgba(0, 0, 0, 0.4);
-        top: 100%;
+      // @media (min-width: #{map-get($breakpoints, medium)) {
+      //   background: rgba(0, 0, 0, 0.4);
+      //   top: 100%;
 
-        transform: translateY(-100%);
-      }
+      //   transform: translateY(-100%);
+      // }
     }
 
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      margin: 0;
-      position: relative;
-    }
+    // @media (min-width: #{map-get($breakpoints, medium)) {
+    //   margin: 0;
+    //   position: relative;
+    // }
 
     .speaker-image {
       height: rem(350px);
@@ -87,23 +87,23 @@
       }
 
       p {
-        @media (min-width: #{map-get($breakpoints, medium)}) {
-          font-size: font-size(small);
-        }
+        // @media (min-width: #{map-get($breakpoints, medium)) {
+        //   font-size: font-size(small);
+        // }
       }
 
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        height: rem(350px);
-        position: absolute;
+      // @media (min-width: #{map-get($breakpoints, medium)) {
+      //   height: rem(350px);
+      //   position: absolute;
 
-        margin: 0;
-        padding-left: rem(10px);
-        padding-top: rem(10px);
+      //   margin: 0;
+      //   padding-left: rem(10px);
+      //   padding-top: rem(10px);
 
-        text-align: left;
+      //   text-align: left;
 
-        transition: transform 0.5s ease-in-out;
-      }
+      //   transition: transform 0.5s ease-in-out;
+      // }
     }
   }
 }

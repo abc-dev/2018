@@ -4,31 +4,31 @@
     size: cover;
     repeat: no-repeat;
   }
-  color: white;
+  color: color(light);
 
   position: relative;
 
   height: 100%;
 
-  @media (min-width: #{map-get($breakpoints, medium)}) {
-    background-image: url(../images/backgrounds/sao-bernardo-do-campo.jpg);
-    background-size: auto;
-    background-position: bottom right;
-    color: black;
+  // @include respond-to(medium) {
+  //   background-image: url(../images/backgrounds/sao-bernardo-do-campo.jpg);
+  //   background-size: auto;
+  //   background-position: bottom right;
+  //   color: color(dark);
 
-    height: 100vh;
+  //   height: 100vh;
 
-    z-index: layer(lowest);
-  }
+  //   z-index: layer(lowest);
+  // }
 
   &::before,
   &::after {
     @include css-content(100%);
     display: none;
 
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      display: block;
-    }
+    // @include respond-to(medium) {
+    //   display: block;
+    // }
 
     position: absolute;
     z-index: layer(low);
@@ -78,61 +78,89 @@
     margin: {
       top: space(xsmall);
       bottom: space(xlarge);
-    }
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      margin: space(large) auto;
-    }
+    };
+    max-width: rem(350px);
+
+    // @include respond-to(medium) {
+    //   margin: space(large) auto;
+    // }
   }
 
   .intro {
+    color: color(light);
+    text-shadow: rem(1px) rem(1px) rem(2px) color(dark), 0 0 1em color(dark), 0 0 0.2em color(dark);
+
     h2 {
       font-size: font-size(medium);
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        font-size: font-size(large);
-      }
+
+      // @include respond-to(medium) {
+      //   font-size: font-size(large);
+      // }
     }
-    .hamburguer {
-      background: #{map-get($brand-colors, secondary)};
-      border: 0;
-      outline: none;
+
+    a {
+      display: block;
+      margin: space(xlarge) auto;
+      padding: rem(12px);
+
+      width: rem(200px);
+
+      background: color(primary);
+      border-radius: rem(5px);
+      color: color(secondary);
+      text-transform: uppercase;
+    }
+
+    // @include respond-to(medium) {
+    //   position: absolute;
+    //   left: 0;
+    //   top: 30vh;
+
+    //   max-width: rem(800px);
+    // }
+  }
+
+  .mobile-nav {
+    background: color(secondary);
+    border: 0;
+    outline: none;
+    position: absolute;
+
+    top: rem(55px);
+    right: rem(20px);
+
+    height: rem(5px);
+    width: rem(30px);
+
+    transition: background-color 0.2s linear;
+
+    z-index: layer(highest);
+
+    &:before,
+    &:after {
+      @include css-content(rem(5px), rem(30px));
+
+      background: color(secondary);
+
       position: absolute;
+      right: 0;
 
-      top: rem(55px);
-      right: rem(20px);
-
-      height: rem(5px);
-      width: rem(30px);
-
-      transition: background-color 0.2s linear;
-
-      z-index: layer(highest);
-
-      &:before,
-      &:after {
-        background: #{map-get($brand-colors, secondary)};
-
-        content: "";
-
-        position: absolute;
-        right: 0;
-
-        height: rem(5px);
-        width: rem(30px);
-
-        transition: transform 0.4s ease-in-out;
-      }
-      &:before {
-        top: rem(-10px);
-      }
-      &:after {
-        top: rem(10px);
-      }
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        display: none;
-      }
+      transition: transform 0.4s ease-in-out;
     }
 
-    .hamburguer.is-active {
+    &:before {
+      top: rem(-10px);
+    }
+
+    &:after {
+      top: rem(10px);
+    }
+
+    // @include respond-to(medium) {
+    //   display: none;
+    // }
+
+    &.is-active {
       background: transparent;
 
       position: fixed;
@@ -149,27 +177,6 @@
       &:after {
         transform: rotate(-45deg);
       }
-    }
-
-    a {
-      display: block;
-      margin: space(xlarge) auto;
-      padding: rem(12px);
-
-      width: rem(200px);
-
-      background: #{map-get($brand-colors, primary)};
-      border-radius: rem(5px);
-      color: #{map-get($brand-colors, secondary)};
-      text-transform: uppercase;
-    }
-
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      position: absolute;
-      left: 0;
-      top: 30vh;
-
-      max-width: rem(800px);
     }
   }
 }

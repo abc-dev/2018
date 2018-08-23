@@ -17,15 +17,15 @@
 
   .sponsor,
   .support {
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    // @media (min-width: #{map-get($breakpoints, medium)) {
+    //   display: flex;
+    //   justify-content: space-around;
+    //   align-items: center;
 
-      margin: space(medium) auto;
+    //   margin: space(medium) auto;
 
-      max-width: rem(1080px);
-    }
+    //   max-width: rem(1080px);
+    // }
 
     figure {
       margin: space(xlarge) auto;

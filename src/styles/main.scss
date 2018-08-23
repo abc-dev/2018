@@ -1,5 +1,6 @@
 @import "./import-core-tools";
 @import "./import-core-settings";
+@import "./settings";
 @import "./objects/reset";
 @import "./components/header";
 @import "./components/main-nav";
@@ -28,5 +29,6 @@ h2 {
 
 .wrapper {
   margin: 0 auto;
-  width: 90%;
+  width: 90vw;
+  max-width: rem(1200px);
 }

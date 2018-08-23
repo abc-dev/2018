@@ -4,28 +4,28 @@
 
   background-color: white;
   text-align: center;
-  @media (min-width: #{map-get($breakpoints, medium)}) {
-    text-align: left;
-  }
+  // @include respond-to(medium)  {
+  //   text-align: left;
+  // }
 
   h2 {
     & span {
       font-weight: bold;
       letter-spacing: rem(2px);
     }
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      font-size: font-size(xxlarge);
+    // @include respond-to(medium)  {
+    //   font-size: font-size(xxlarge);
 
-      margin-left: rem(300px);
-      & + p {
-        margin-left: rem(300px);
-        padding-right: rem(100px);
+    //   margin-left: rem(300px);
+    //   & + p {
+    //     margin-left: rem(300px);
+    //     padding-right: rem(100px);
 
-        font-size: font-size(xlarge);
-        line-height: font-size(xxlarge);
-        text-align: left;
-      }
-    }
+    //     font-size: font-size(xlarge);
+    //     line-height: font-size(xxlarge);
+    //     text-align: left;
+    //   }
+    // }
   }
 
   h3 {
@@ -46,61 +46,61 @@
     & + p {
       margin-top: rem(125px);
 
-      @media (min-width: #{map-get($breakpoints, medium)}) {
-        margin-top: 0;
-        margin-left: rem(300px);
-        float: none;
-        clear: left;
-        font-weight: bold;
-        font-size: font-size(medium);
-        & + p {
-          position: absolute;
-          max-width: rem(960px);
+      // @include respond-to(medium)  {
+      //   margin-top: 0;
+      //   margin-left: rem(300px);
+      //   float: none;
+      //   clear: left;
+      //   font-weight: bold;
+      //   font-size: font-size(medium);
+      //   & + p {
+      //     position: absolute;
+      //     max-width: rem(960px);
 
-          font-size: font-size(large);
-          line-height: font-size(xlarge);
+      //     font-size: font-size(large);
+      //     line-height: font-size(xlarge);
 
-          transform: translate(75%, -135%);
-        }
-      }
+      //     transform: translate(75%, -135%);
+      //   }
+      // }
     }
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      margin-top: space(xlarge);
-      font-size: font-size(xxlarge);
-      font-weight: bold;
-      display: block;
-      margin-left: rem(300px);
-      width: rem(300px);
-      float: left;
-      &:after {
-        top: 0;
-        left: 100%;
-      }
-    }
+    // @include respond-to(medium)  {
+    //   margin-top: space(xlarge);
+    //   font-size: font-size(xxlarge);
+    //   font-weight: bold;
+    //   display: block;
+    //   margin-left: rem(300px);
+    //   width: rem(300px);
+    //   float: left;
+    //   &:after {
+    //     top: 0;
+    //     left: 100%;
+    //   }
+    // }
   }
 
   p {
     margin: space(large) auto;
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      font-size: font-size(large);
-    }
+    // @include respond-to(medium)  {
+    //   font-size: font-size(large);
+    // }
   }
 
   p:nth-child(5) {
     font-size: font-size(large);
-    @media (min-width: #{map-get($breakpoints, medium)}) {
-      margin: space(xlarge) auto;
+    // @include respond-to(medium)  {
+    //   margin: space(xlarge) auto;
 
-      font-size: font-size(xlarge);
-      text-align: center;
-    }
+    //   font-size: font-size(xlarge);
+    //   text-align: center;
+    // }
     & code {
       font-weight: bold;
     }
   }
 
   p a {
-    color: #{map-get($brand-colors, secondary)};
+    color: color( secondary);
     font-weight: bold;
     text-decoration: underline;
   }

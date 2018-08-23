@@ -19,16 +19,20 @@ body {
 
 h1 {
   font-size: font-size(xlarge);
-  text-transform: uppercase;
 }
+
 h2 {
-  font-size: font-size(xlarge);
+  font-size: font-size(large);
   font-weight: bold;
-  text-transform: uppercase;
+
+  @include respond-to(medium) {
+    font-size: font-size(xlarge);
+  }
 }
 
 .wrapper {
   margin: 0 auto;
-  width: 90vw;
-  max-width: rem(1200px);
+  padding-top: space(medium);
+  width: 85vw;
+  max-width: rem(1100px);
 }

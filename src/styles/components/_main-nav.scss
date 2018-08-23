@@ -5,72 +5,126 @@
   top: 0;
   right: 0;
 
-  margin: 0 auto;
-  padding-top: 10vh;
-
   height: 100%;
-  width: 75%;
+  width: 85vw;
+  padding-top: space(xlarge);
 
   transform: translateX(100%);
   transition: transform 0.6s ease-out;
 
   z-index: layer(high);
 
-  // @include respond-to(medium)  {
-  //   background: none;
-
-  //   position: relative;
-
-  //   padding-top: 0;
-
-  //   height: 100vh;
-  //   width: 70%;
-
-  //   transform: translateX(0);
-  // }
-
   a {
     display: block;
 
-    color: black;
+    color: color(dark, darkest);
     text-align: right;
 
-    padding: rem(16px) rem(24px);
+    padding: space(small, medium);
 
     font-size: font-size(large);
     font-weight: bold;
     text-transform: uppercase;
+    border-bottom: solid rem(4px) color(primary);
 
-    // @include respond-to(medium)  {
-    //   color: white;
-    //   display: inline-block;
-    // }
+    &:hover {
+      background-color: darken(color(primary), 10%);
+      border-color: color(dark, darkest);
+    }
   }
 
   .go-to-start {
-    display: none;
-
-    background: {
-      image: url("#{$images-path}/logo-abcdev.svg");
-      repeat: no-repeat;
-      size: cover;
+    span {
+      @include hide-element;
     }
+  }
+
+  &.is-active {
+    transform: translateX(0);
   }
 }
 
-.main-nav.is-active {
-  transform: translateX(0);
-}
-
 .social-nav {
+  text-align: center;
+
   a {
     display: inline-block;
     margin: space(small);
   }
+}
 
-  // @include respond-to(medium)  {
-  //   position: absolute;
-  //   right: 0;
-  //   bottom: rem(50px);
-  // }
+.mobile-nav {
+  display: block;
+  background: color(secondary);
+  border: 0;
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+
+  top: space(medium);
+  right: space(medium);
+
+  height: rem(5px);
+  width: rem(30px);
+
+  text-shadow: rem(1px) rem(1px) rem(2px) color(dark), 0 0 0.2em color(dark);
+
+  transition: background-color 0.2s linear;
+
+  z-index: layer(highest);
+
+  &:before,
+  &:after {
+    @include css-content(rem(5px), rem(30px));
+
+    background: color(secondary);
+
+    position: absolute;
+    right: 0;
+
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &:before {
+    top: rem(-10px);
+  }
+
+  &:after {
+    top: rem(10px);
+  }
+
+  span {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: space(small, medium);
+    font-weight: font-weight(bold);
+  }
+
+  &.is-active {
+    background-color: transparent;
+
+    position: fixed;
+    right: space(large);
+
+    &:before,
+    &:after {
+      top: 0;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    span {
+      @include hide-element;
+    }
+  }
 }

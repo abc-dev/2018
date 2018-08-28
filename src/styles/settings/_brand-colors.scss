@@ -25,6 +25,9 @@
 ///     )
 ///   );
 $brand-colors: (
-  primary: #f4d11e,
+  primary: (
+    base: #f4d11e,
+    medium: #fdc200
+  ),
   secondary: #333333
 ) !default;

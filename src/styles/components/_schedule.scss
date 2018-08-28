@@ -1,9 +1,8 @@
 .schedule {
   background: color( secondary);
-  color: white;
+  color: color(light);
   text-align: center;
 
-  margin: space(xlarge) auto;
   padding: space(large) 0;
 
   .wrapper {
@@ -11,13 +10,8 @@
     //   display: flex;
     // }
   }
-  p {
-    margin: space(medium) 0;
-  }
 
   .track {
-    margin: space(xlarge) auto;
-
     position: relative;
 
     &:after {
@@ -37,7 +31,6 @@
     h4 {
       font-size: font-size(large);
       font-weight: bold;
-      text-transform: uppercase;
     }
 
     // @include respond-to(medium)  {
@@ -69,8 +62,7 @@
     }
 
     a {
-      color: white;
-      font-weight: bold;
+      color: color(light);
     }
 
     // @include respond-to(medium)  {

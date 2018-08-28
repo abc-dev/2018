@@ -17,13 +17,11 @@
   a {
     display: block;
 
-    color: color(dark, darkest);
     text-align: right;
 
     padding: space(small, medium);
 
     font-size: font-size(large);
-    font-weight: bold;
     text-transform: uppercase;
     border-bottom: solid rem(4px) color(primary);
 
@@ -46,10 +44,19 @@
 
 .social-nav {
   text-align: center;
+  word-spacing: space(medium);
 
   a {
-    display: inline-block;
-    margin: space(small);
+    color: color(light, dark);
+    border-radius: 50%;
+    border: 0;
+    padding: rem(2px);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: color(dark);
+    }
   }
 }
 

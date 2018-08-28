@@ -32,9 +32,13 @@
 ///     dark: #000
 ///   );
 $ui-colors: (
-  light: #ffffff,
+  light: (
+    base: #fff,
+    dark: #e0e0e0
+  ),
   dark: (
-    base: #333333,
-    darkest: #000000
+    base: #333,
+    darkest: #000000,
+    light: #ababab
   )
 ) !default;

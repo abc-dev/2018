@@ -1,27 +1,16 @@
 .speakers {
-  margin: space(xlarge) auto;
-
   text-align: center;
 
-  // @media (min-width: #{map-get($breakpoints, medium)) {
+  // @include respond-to(medium) {
   //   color: white;
 
   //   padding-bottom: space(large);
   // }
 
-  h2 {
-    margin: space(large) auto;
-  }
-
-  a {
-    display: inline-block;
-  }
-
   .all-speaker {
-    margin: space(large) auto;
-    max-width: rem(1080px);
+    // max-width: rem(1080px);
 
-    // @media (min-width: #{map-get($breakpoints, medium)) {
+    // @include respond-to(medium) {
     //   display: flex;
     //   flex-wrap: wrap;
     // }
@@ -35,14 +24,14 @@
 
     transition: filter 0.4s ease-in;
 
-    &:nth-child(odd) {
-      // @media (min-width: #{map-get($breakpoints, medium)) {
-      //   top: rem(50px);
-      // }
+    @include respond-to(medium) {
+      &:nth-child(odd) {
+        top: rem(50px);
+      }
     }
 
     &:hover {
-      // @media (min-width: #{map-get($breakpoints, medium)) {
+      // @include respond-to(medium) {
       //   -webkit-filter: grayscale(1);
       //   -moz-filter: grayscale(1);
       //   filter: grayscale(1);
@@ -50,7 +39,7 @@
     }
 
     &:hover > .speaker-info {
-      // @media (min-width: #{map-get($breakpoints, medium)) {
+      // @include respond-to(medium) {
       //   background: rgba(0, 0, 0, 0.4);
       //   top: 100%;
 
@@ -58,7 +47,7 @@
       // }
     }
 
-    // @media (min-width: #{map-get($breakpoints, medium)) {
+    // @include respond-to(medium) {
     //   margin: 0;
     //   position: relative;
     // }
@@ -87,12 +76,12 @@
       }
 
       p {
-        // @media (min-width: #{map-get($breakpoints, medium)) {
+        // @include respond-to(medium) {
         //   font-size: font-size(small);
         // }
       }
 
-      // @media (min-width: #{map-get($breakpoints, medium)) {
+      // @include respond-to(medium) {
       //   height: rem(350px);
       //   position: absolute;
 

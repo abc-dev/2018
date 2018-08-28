@@ -1,32 +1,27 @@
 .schedule {
   background: color( secondary);
   color: color(light);
-  text-align: center;
 
-  padding: space(large) 0;
-
-  .wrapper {
-    // @include respond-to(medium)  {
-    //   display: flex;
-    // }
+  h2 {
+    color: color(primary);
   }
 
   .track {
     position: relative;
 
-    &:after {
-      content: "";
-      background: color( primary);
-      border-radius: 50%;
-      position: absolute;
-      width: rem(20px);
-      height: rem(20px);
+    // &:after {
+    //   content: "";
+    //   background: color( primary);
+    //   border-radius: 50%;
+    //   position: absolute;
+    //   width: rem(20px);
+    //   height: rem(20px);
 
-      top: 100%;
-      left: 50%;
+    //   top: 100%;
+    //   left: 50%;
 
-      transform: translateX(-50%) translateY(50%);
-    }
+    //   transform: translateX(-50%) translateY(50%);
+    // }
 
     h4 {
       font-size: font-size(large);

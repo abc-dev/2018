@@ -24,9 +24,8 @@ h1 {
 h2 {
   font-size: font-size(xlarge);
   font-weight: bold;
-  margin: space(medium) 0 space(large);
+  margin: space(small) 0 space(large);
   color: color(dark, darkest);
-  text-align: center;
 
   &::before {
     content: "<";
@@ -50,7 +49,6 @@ h3 {
   font-weight: bold;
   margin: space(large) 0;
   color: color(dark, darkest);
-  text-align: center;
 
   @include respond-to(medium) {
     font-size: font-size(xlarge);
@@ -107,4 +105,10 @@ strong {
   };
   width: 85vw;
   max-width: rem(1100px);
+  text-align: center;
+}
+
+.highlight {
+  font-weight: bold;
+  margin: space(large) 0 space(medium);
 }

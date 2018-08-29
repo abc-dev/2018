@@ -6,7 +6,7 @@ let browserSync = require('browser-sync');
 
 gulp.task('copy:all', ['copy:html', 'copy:assets', 'copy:js']);
 gulp.task('copy:html', copyHtmlTask);
-gulp.task('copy:assets', copyAssetsTask);
+gulp.task('copy:assets', ['images'], copyAssetsTask);
 gulp.task('copy:js', copyJsTask);
 
 function copyHtmlTask() {

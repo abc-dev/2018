@@ -83,14 +83,19 @@
     }
 
     a {
+      color: color(dark);
       margin: {
         top: space(small);
         bottom: space(small);
       };
+
+      @include respond-to(medium) {
+        color: color(light, dark);
+      }
     }
 
-    @include respond-to(medium) {
-      p {
+    p {
+      @include respond-to(medium) {
         font-size: font-size(small);
       }
     }

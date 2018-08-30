@@ -13,5 +13,5 @@ function browserSyncTask() {
     server: {
       baseDir: config.server.baseUrl
     }
-  })
+  });
 }

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 require('./tasks/clean.js');
 require('./tasks/styles.js');

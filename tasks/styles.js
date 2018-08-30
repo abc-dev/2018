@@ -8,10 +8,6 @@ let sourcemaps = require('gulp-sourcemaps');
 let gutil = require('gulp-util');
 let browserSync = require('browser-sync');
 
-let autoprefixerOptions = {
-  browsers: config.browsersSupport
-};
-
 let sassOptions = {
   errLogToConsole: true,
   sourceComments: true,

@@ -11,4 +11,4 @@ function deploy() {
     .src('./build/**/*')
     .pipe(plumber())
     .pipe(ghPages());
-};
+}

@@ -12,20 +12,20 @@ gulp.task('copy:js', copyJsTask);
 function copyHtmlTask() {
   return gulp
     .src('**/*.html', { cwd: config.sourceDir })
-    .pipe(gulp.dest( config.buildDir ))
+    .pipe(gulp.dest(config.buildDir))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function copyAssetsTask() {
   return gulp
     .src([`{${config.assets}}/**/*`, '**/CNAME'], { cwd: config.sourceDir })
-    .pipe(gulp.dest( config.buildDir ))
+    .pipe(gulp.dest(config.buildDir))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function copyJsTask() {
   return gulp
     .src('**/*.js', { cwd: config.sourceDir })
-    .pipe(gulp.dest( config.buildDir ))
+    .pipe(gulp.dest(config.buildDir))
     .pipe(browserSync.reload({ stream: true }));
 }

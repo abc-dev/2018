@@ -8,6 +8,10 @@ let sourcemaps = require('gulp-sourcemaps');
 let gutil = require('gulp-util');
 let browserSync = require('browser-sync');
 
+let autoprefixerOptions = {
+  browsers: config.browsersSupport
+};
+
 let sassOptions = {
   errLogToConsole: true,
   sourceComments: true,
@@ -22,7 +26,7 @@ function stylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', onError))
     .pipe(sourcemaps.write())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ autoprefixerOptions }))
     .pipe(gulp.dest(config.buildDir))
     .pipe(browserSync.reload({ stream: true }));
 }

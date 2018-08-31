@@ -1,0 +1,24 @@
+@mixin separator($color-a, $color-b) {
+  position: relative;
+  margin-top: space(xlarge);
+  padding-top: space(xlarge);
+
+  &::before,
+  &::after {
+    @include css-content(30vw, rem(3px));
+
+    position: absolute;
+  }
+
+  &::before {
+    top: 0;
+    background-color: $color-a;
+    transform: translateX(-30%);
+  }
+
+  &::after {
+    top: rem(3px);
+    background-color: $color-b;
+    transform: translateX(30%);
+  }
+}

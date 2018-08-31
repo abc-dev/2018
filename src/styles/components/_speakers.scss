@@ -2,7 +2,7 @@
   @include respond-to(medium) {
     color: color(light);
 
-    padding-bottom: space(large);
+    padding-bottom: space(xlarge) * 1.5;
   }
 
   .all-speaker {
@@ -27,7 +27,9 @@
     margin: 0;
     position: relative;
 
-    &:nth-child(odd) {
+    &:nth-child(3n),
+    &:nth-child(3n+1),
+    &:first-child {
       top: rem(50px);
     }
   }

@@ -1,43 +1,45 @@
 .sponsors {
-  h2,
-  h3 {
-    margin: space(large) auto;
-  }
-  h3 {
-    font-size: rem(24px);
-    text-transform: uppercase;
+  img {
+    display: block;
+    width: 100%;
   }
 
-  p {
-    font-size: font-size(medium);
+  .sponsor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+
+    max-width: rem(1080px);
   }
 
-  .sponsor,
-  .support {
-    // @media (min-width: #{map-get($breakpoints, medium)) {
-    //   display: flex;
-    //   justify-content: space-around;
-    //   align-items: center;
+  .two-mega {
+    figure {
+      max-width: rem(320px);
+      margin: space(large);
+    }
+  }
 
-    //   margin: space(medium) auto;
-
-    //   max-width: rem(1080px);
-    // }
+  .one-mega {
+    @include separator(color(primary), color(dark, medium));
 
     figure {
-      margin: space(xlarge) auto;
-      max-height: 300px;
-      width: 240px;
-    }
-
-    img {
-      width: 100%;
+      max-width: rem(250px);
     }
   }
+
+  .half-mega {
+    @include separator(color(primary), color(dark, medium));
+
+    figure {
+      max-width: rem(180px);
+    }
+  }
+
   .support {
-    img {
-      margin: space(large) auto;
-      max-width: 180px;
+    figure {
+      margin: space(medium);
+      max-width: rem(120px);
     }
   }
 }

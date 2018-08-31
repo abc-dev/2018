@@ -14,6 +14,15 @@
 
   z-index: layer(high);
 
+  @include respond-to(medium) {
+    background-color: transparent;
+    transform: translate(0);
+    width: 100%;
+    height: auto;
+    padding-top: unset;
+    position: relative;
+  }
+
   a {
     display: block;
 
@@ -25,6 +34,15 @@
     text-transform: uppercase;
     border-bottom: solid rem(4px) color(primary);
 
+    @include respond-to(medium) {
+      display: inline-block;
+      text-transform: none;
+
+      color: color(light);
+
+      padding: rem(4px);
+    }
+
     &:hover {
       background-color: darken(color(primary), 10%);
       border-color: color(dark, darkest);
@@ -32,6 +50,10 @@
   }
 
   .go-to-start {
+    @include respond-to(medium) {
+      display: none;
+    }
+
     span {
       @include hide-element;
     }
@@ -78,6 +100,10 @@
   transition: background-color 0.2s linear;
 
   z-index: layer(highest);
+
+  @include respond-to(medium) {
+    display: none;
+  }
 
   &:before,
   &:after {

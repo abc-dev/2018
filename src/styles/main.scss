@@ -2,6 +2,7 @@
 @import "./import-core-settings";
 @import "./settings";
 @import "./objects/reset";
+@import "./components/separator";
 @import "./components/header";
 @import "./components/main-nav";
 @import "./components/about";
@@ -48,7 +49,7 @@ h2 {
 h3 {
   font-size: font-size(large);
   font-weight: bold;
-  margin: space(large) 0;
+  margin: space(xlarge) 0 space(medium);
   color: color(dark, darkest);
 
   @include respond-to(medium) {
@@ -105,7 +106,7 @@ table {
 section {
   width: 100%;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .wrapper {

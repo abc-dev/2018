@@ -26,7 +26,7 @@ function stylesTask() {
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', onError))
     .pipe(sourcemaps.write())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({ autoprefixerOptions }))
     .pipe(gulp.dest(config.buildDir))
     .pipe(browserSync.reload({ stream: true }));
 }

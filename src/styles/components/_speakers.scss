@@ -1,0 +1,159 @@
+.speakers {
+  position: relative;
+  // overflow: hidden;
+
+  @include respond-to(large) {
+    padding-bottom: space(xlarge) * 1.5;
+
+    &::before,
+    &::after {
+      @include css-content(100%, 100vh);
+
+      position: absolute;
+      top: 50%;
+      z-index: layer(low);
+    }
+
+    &::before {
+      background-color: color(primary);
+      transform: skewY(13deg) translateY(-120%);
+    }
+
+    &::after {
+      background-color: color(secondary);
+      transform: skewY(-13deg) translateY(20%);
+    }
+  }
+
+  .all-speaker {
+    position: relative;
+    z-index: layer(medium);
+
+    @include respond-to(large) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: space(large);
+    }
+  }
+}
+
+.speaker {
+  max-width: rem(260px);
+  margin: space(medium) auto;
+
+  overflow: hidden;
+
+  transition: filter 0.4s ease-in;
+
+  @include respond-to(large) {
+    margin: 0;
+    position: relative;
+  }
+
+  &:hover {
+    @include respond-to(large) {
+      -webkit-filter: grayscale(1);
+      -moz-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+
+    > .info {
+      @include respond-to(large) {
+        background: rgba(0, 0, 0, 0.6);
+        top: 100%;
+        color: color(light);
+
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  img {
+    display: block;
+    height: rem(350px);
+    width: rem(260px);
+
+    overflow: hidden;
+  }
+
+  .info {
+    margin: space(small) auto;
+
+    z-index: layer(high);
+
+    transition: background 3s linear;
+    transition-delay: 1s;
+
+    @include respond-to(large) {
+      height: rem(350px);
+      position: absolute;
+
+      margin: 0;
+      padding-left: space(small);
+      padding-top: space(medium);
+
+      text-align: left;
+
+      transition: transform 0.5s ease-in-out;
+    }
+
+    h4 {
+      color: color(dark, darkest);
+      font-size: font-size(large);
+      margin-bottom: space(small);
+
+      @include respond-to(large) {
+        text-align: center;
+        color: color(light);
+        font-weight: bold;
+      }
+
+      &::before,
+      &::after {
+        color: color(primary);
+        font-weight: bold;
+
+        @include respond-to(large) {
+          color: color(primary);
+        }
+      }
+
+      &::before {
+        content: "<";
+        margin-right: em(space(xsmall));
+      }
+
+      &::after {
+        content: ">";
+        margin-left: em(space(xsmall));
+      }
+    }
+
+    a {
+      color: color(dark);
+      margin: {
+        top: space(small);
+        bottom: space(small);
+      };
+
+      @include respond-to(large) {
+        color: color(light);
+      }
+
+      &:hover,
+      &:focus {
+        @include respond-to(large) {
+          color: color(dark, darkest);
+        }
+      }
+    }
+
+    p {
+      @include respond-to(large) {
+        font-size: font-size(small);
+      }
+    }
+  }
+}
+

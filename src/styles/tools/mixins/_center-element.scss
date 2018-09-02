@@ -1,0 +1,23 @@
+/// Mixin para centralizar um elemento horizontal e verticalmente.
+///
+/// @group   Tools [Ferramentas]
+///
+/// @example scss - Uso
+///   svg {
+///     @include center-element;
+///   }
+///
+/// @example scss - Compilado
+///   svg {
+///     position: absolute;
+///     top: 50%;
+///     left: 50%;
+///     transform: translate(-50%, -50%);
+///   }
+@mixin center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}

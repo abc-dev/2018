@@ -1,0 +1,15 @@
+/// Função para limpar a unidade de qualquer valor númerico tornando possivel
+/// fazer calculos
+/// @group   Tools [Ferramentas]
+/// @access  private
+///
+/// @param   {number} $value - Valor a ser limpo
+///
+/// @return  {number} - Valor limpo
+@function _clean-unit($value) {
+  @if type-of($value) == 'number' {
+    @return $value / ($value * 0 + 1);
+  } @else {
+    @warn '#{$value} nao e um número';
+  }
+}

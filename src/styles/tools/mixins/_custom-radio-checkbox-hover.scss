@@ -1,0 +1,33 @@
+/// Mixin para facilitar a criação de estilos para o status `hover` e `focus`
+/// para inputs personalizados *checkados*. Os estilos aplicados entre as chaves
+/// são adicionados ao elemento `label`.
+///
+/// @group   Tools [Ferramentas]
+///
+/// @output  Quando compilado coloca todas as propriedades que foram adicionadas
+///          entre as chaves (content)
+///
+/// @example scss - Uso
+///   .custom-choice {
+///     @include custom-radio-checkbox-hover {
+///       color: red;
+///       border: solid 1px #f0f;
+///     }
+///   }
+///
+/// @example css - Compilado
+///   .custom-choice input:focus ~ label,
+///   .custom-choice input:hover ~ label {
+///     color: red;
+///     border: solid 1px #f0f;
+///   }
+@mixin custom-radio-checkbox-hover {
+  input {
+    &:focus,
+    &:hover {
+      ~ label {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+/// Retorna a cor desejada de acordo com o configurado nos mapas `$brand-colors`
+/// e `$ui-colors`
+/// @group   Tools [Ferramentas]
+///
+/// @return  {color} - Cor desejada
+///
+/// @param   {string} $color - Nome da chave da cor desejada
+/// @param   {string} $variation - Nome da chave da variação da cor desejada
+///
+/// @example scss - Uso
+///   .elemento {
+///     background: color(primary);
+///     color: color(secondary);
+///   }
+///   .elemento2 {
+///     background: color(primary, light);
+///     color: color(dark, light);
+///   }
+///
+/// @example scss - Compilado
+///   .elemento {
+///     background: #000;
+///     color: #f0f;
+///   }
+///   .elemento2 {
+///     background: #c0c0c0;
+///     color: #999;
+///   }
+@function color($color, $variation: null) {
+  @if variable-exists(brand-colors) and variable-exists(ui-colors) {
+    $all-colors: map-merge($brand-colors, $ui-colors);
+
+    @if map-has-key($all-colors, $color) {
+      $type: map-get($all-colors, $color);
+
+      @if $variation == null {
+        @if type-of($type) == map {
+          @return _map-deep-get($all-colors, $color, 'base');
+        } @else {
+          @return map-get($all-colors, $color);
+        }
+      } @else {
+        @return _map-deep-get($all-colors, $color, $variation);
+      }
+    } @else {
+      @warn 'A chave "#{$color}" nao existe no mapa "$brand-colors" ou "$ui-colors"';
+    }
+  } @else {
+    @warn 'Os mapas "$brand-colors" e "$ui-colors" nao existem. Por favor verifique e tente novamente!';
+  }
+}

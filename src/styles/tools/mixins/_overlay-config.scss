@@ -1,0 +1,72 @@
+/// Mixin que inclui as características necessárias para que um elemento ou
+/// pseudo-elemento se converta em um overlay
+///
+/// @group   Tools [Ferramentas]
+/// @output  Quando compilado coloca todas as propriedades definidas
+///
+/// @param   {color} $overlay-color [rgba(color(secondary), .8)] - Cor do fundo
+///          do overlay. Tem que passar em formato rgba para que seja transparente
+///
+/// @example scss - Uso
+///   .class {
+///     &::before {
+///       @include overlay-config;
+///     }
+///   }
+///   .class2 {
+///     &::before {
+///       @include overlay-config(red);
+///     }
+///   }
+///   .class3 {
+///     @include overlay-config;
+///   }
+///
+/// @example css - Compilado
+///   .class::before {
+///     content: '';
+///     display: inline-block;
+///     width: 102vw;
+///     height: 102vh;
+///     position: fixed;
+///     top: 50%;
+///     left: 50%;
+///     z-index: 930;
+///     transform: translate(-50%, -50%);
+///     background-color: rgba(0, 0, 255, 0.8);
+///   }
+///   .class2::before {
+///     content: '';
+///     display: inline-block;
+///     width: 102vw;
+///     height: 102vh;
+///     position: fixed;
+///     top: 50%;
+///     left: 50%;
+///     z-index: 930;
+///     transform: translate(-50%, -50%);
+///     background-color: red;
+///   }
+///   .class3 {
+///     content: '';
+///     display: inline-block;
+///     width: 102vw;
+///     height: 102vh;
+///     position: fixed;
+///     top: 50%;
+///     left: 50%;
+///     z-index: 930;
+///     transform: translate(-50%, -50%);
+///     background-color: rgba(0, 0, 255, 0.8);
+///   }
+@mixin overlay-config($overlay-color: rgba(color(secondary), .8)) {
+  @include css-content(102vw, 102vh);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: layer(high);
+  transform: translate(-50%, -50%);
+
+  background-color: $overlay-color;
+}

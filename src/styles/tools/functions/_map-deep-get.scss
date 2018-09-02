@@ -1,0 +1,15 @@
+/// Map deep get
+/// @group  Tools [ferramentas]
+/// @author Hugo Giraudel
+/// @access private
+///
+/// @param {Map} $map - Mapa
+/// @param {Arglist} $keys - Sequencia de chaves
+///
+/// @return {*} - Valor desejado
+@function _map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}

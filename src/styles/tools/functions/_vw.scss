@@ -1,0 +1,33 @@
+/// Converte valores de `px` para `vw`. A unidade (px) não é obrigatória.
+/// @group   Tools [Ferramentas]
+///
+/// @param   {number} $value - Valor a ser convertido
+///
+/// @return  {number} - Valor convertido expressado em `vw`
+///
+/// @example scss - Uso
+///   .elemento {
+///     max-width: vw(300);
+///   }
+///   .elemento2 {
+///     max-width: vw(300px);
+///   }
+///
+/// @example scss - Compilado
+///   .elemento {
+///     max-width: 29.89vw
+///   }
+///   .elemento2 {
+///     max-width: 29.89vw
+///   }
+@function vw($value) {
+  @if type-of($value) == 'number' {
+    $value: _clean-unit($value);
+    $view-width: _clean-unit($view-width-base);
+    $convertion: _decimal-floor(($value * 100) / $view-width, 2);
+
+    @return $convertion * 1vw;
+  } @else {
+    @warn '#{$value} deve ser um numero';
+  }
+}

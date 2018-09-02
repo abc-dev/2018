@@ -1,0 +1,44 @@
+/// `Gambiarte` que corrige o bug causado pelo uso excessivo do float +P
+///
+/// @group   Objects [Objetos]
+///
+/// @example scss - Uso
+///   .element {
+///     @include clearfix;
+///   }
+///
+/// @example scss - Compilado
+///   .element:after {
+///     content: '';
+///     display: table;
+///     clear: both;
+///   }
+@mixin clearfix {
+  @if map-has-key($browser-min-version, 'ie') {
+    $minimum-support: map-get($browser-min-version, 'ie');
+
+    @if $minimum-support < 8 {
+      &::before,
+      &::after {
+        content: '';
+        display: table;
+      }
+
+      &::after {
+        clear: both;
+      }
+
+      & {
+        zoom: 1; // For IE 6/7 (trigger hasLayout)
+      }
+    } @else {
+      &::after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+  } @else {
+    @warn 'A chave "ie" nao existe no mapa "$browser-min-version"!';
+  }
+}

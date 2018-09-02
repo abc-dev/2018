@@ -1,0 +1,65 @@
+/// Mixin para criar estilos padrão para elementos de formulário como inputs,
+/// selects, textareas, etc.
+///
+/// @group   Tools [Ferramentas]
+///
+/// @example scss - Uso
+///   input {
+///     @include all-input-text-like {
+///       padding: {
+///         top: 10px;
+///         bottom: 15px;
+///       };
+///     }
+///   }
+///   .classe {
+///     @include all-input-text-like {
+///       border: solid 1px #f00;
+///     }
+///   }
+///
+/// @example scss - Compilado
+///    input[type='text'],
+///    input[type='password'],
+///    input[type='url'],
+///    input[type='email'],
+///    input[type='tel'],
+///    input[type='search'],
+///    input[type='number'],
+///    input[type='date'],
+///    input[type='month'],
+///    input[type='week'],
+///    input[type='datetime'],
+///    input[type='datetime-local'] {
+///      padding-top: 10px;
+///      padding-bottom: 15px;
+///    }
+///    .classe[type='text'],
+///    .classe[type='password'],
+///    .classe[type='url'],
+///    .classe[type='email'],
+///    .classe[type='tel'],
+///    .classe[type='search'],
+///    .classe[type='number'],
+///    .classe[type='date'],
+///    .classe[type='month'],
+///    .classe[type='week'],
+///    .classe[type='datetime'],
+///    .classe[type='datetime-local'] {
+///      border: solid 1px #f00;
+///    }
+@mixin all-input-text-like {
+  @at-root {
+    $placeholder: unique-id();
+
+    %#{$placeholder} {
+      @content;
+    }
+
+    @each $item in $input-text-like-types {
+      &[type='#{$item}'] {
+        @extend %#{$placeholder};
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/// Mixin que adiciona o CSS necessário para que quando o texto seja maior que o
+/// container sejam adicionados os "três pontinhos".
+///
+/// **Exemplo**: `lorem ipsum bla blablabl...`
+///
+/// @group   Tools [Ferramentas]
+/// @output  Quando compilado coloca todas as propriedades especificadas no mixin
+///
+/// @example scss - Uso
+///   .class {
+///     @include ellipsis;
+///   }
+///
+/// @example css - Compilado
+///   .class {
+///     overflow: hidden;
+///     text-overflow: ellipsis;
+///     white-space: nowrap;
+///   }
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

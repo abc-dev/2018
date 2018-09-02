@@ -1,0 +1,45 @@
+/// Mapa de cores padrão da interface UI e que não mudam de uma **brand** para
+/// outra
+///
+/// Se for necessário adicionar variações de uma cor, utilize mapas aninhados
+/// utilizando chaves como mostrado abaixo:
+/// #### Modificadores recomendados:
+///  - **lightest**: cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **lighter**:  cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **light**:    cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **base**:     cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **medium**:   cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **dark**:     cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **darker**:   cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///  - **darkest**:  cor expressada em formato `rgb`, `rgba`, `hexa`, `color name`, etc
+///
+/// @group    Settings [Configurações]
+///
+/// @example scss - Uso
+///   $ui-colors: (
+///     warning: (
+///       base: #FFBF00,
+///       light: #FFFD7C
+///     ),
+///     error: #dd0000,
+///     success: #8FFF49,
+///     light: (
+///       lightest: #fff,
+///       lighter:  #f8f8f8,
+///       base:     #f4f4f4,
+///       medium:   #eeedeb
+///     ),
+///     dark: #000
+///   );
+$ui-colors: (
+  light: (
+    base: #fff,
+    dark: #f0f0f0
+  ),
+  dark: (
+    base: #333,
+    darkest: #000000,
+    light: #ababab,
+    medium: #666
+  )
+) !default;

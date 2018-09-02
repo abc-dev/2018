@@ -1,0 +1,46 @@
+/// Mapa de fontes da Brand
+/// Se for utilizar "fontes padrão de SO" como `Arial`, `Helvetica`, etc.
+/// então a chave `path` precisa ter o valor `null`
+///
+/// **Lembre-se** que o `path` é relativo ao arquivo `main.scss`.
+/// @link https://developer.mozilla.org/pt-BR/docs/Web/CSS/font-weight#Mapeamento_de_nomes_comuns_de_pesos
+///
+/// @group    Settings [Configurações]
+///
+/// @example scss - Uso
+///   $ui-fonts: (
+///     custom-font: (
+///       name: 'DroidSerif',
+///       path: '../fonts/DroidSerif-Regular-webfont.ttf',
+///       weight: 400,
+///       style: normal
+///     ),
+///     // Para melhor performance e usabilidade, sempre mantenha o mesmo `nome`
+///     // quando for a mesma fonte mas com outro peso/estilo, ou ambos
+///     custom-italic: (
+///       name: 'DroidSerif',
+///       path: '../fonts/DroidSerif-Italic-webfont',
+///       weight: normal,
+///       style: italic
+///     )
+///   );
+$ui-fonts: (
+  base: (
+    name: #{'Lato', sans-serif},
+    path: null,
+    weight: 400,
+    style: normal
+  ),
+  highlight: (
+    name: #{'Oswald', sans-serif},
+    path: null,
+    weight: 500,
+    style: normal
+  ),
+  bold: (
+    name: #{'Oswald', sans-serif},
+    path: null,
+    weight: 700,
+    style: normal
+  )
+) !default;

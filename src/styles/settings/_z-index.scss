@@ -1,0 +1,10 @@
+/// Mapa de configuração das camadas utilizadas
+/// @group    Settings [Configurações]
+$z-index: (
+  lowest: -9,
+  low: -1,
+  base: 5,
+  medium: 50,
+  high: 930,
+  highest: 950
+) !default;

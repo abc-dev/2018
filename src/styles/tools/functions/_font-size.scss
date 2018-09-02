@@ -1,0 +1,26 @@
+/// Retorna o valor correspondente ao tamanho da fonte nos mapas `$font-sizes`
+///
+/// @group   Tools [Ferramentas]
+///
+/// @return  {number} - Valor desejado
+///
+/// @param   {number} $key-name - Nome do tamanho da fonte desejada
+/// @param   {bool} $is-absolute [false] - indica se a fonte será expressada em
+///          unidade absoluta
+///
+/// @example scss - Uso
+///   .classe-qualquer {
+///     font-size: font-size(small);
+///   }
+///
+/// @example scss - Compilado
+///   .classe-qualquer {
+///     font-size: .75rem;
+///   }
+@function font-size($key-name, $is-absolute: false) {
+  @if $is-absolute {
+    @return _map-deep-get($font-sizes, #{$key-name});
+  } @else {
+    @return rem(_map-deep-get($font-sizes, #{$key-name}));
+  }
+}

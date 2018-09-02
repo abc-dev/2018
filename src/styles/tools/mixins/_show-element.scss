@@ -1,0 +1,28 @@
+/// Mixin que faz aparecer um elemento escondido utilizando o mixin
+/// `hide-element` aos leitores de tela
+///
+/// @group   Tools [Ferramentas]
+/// @output  Quando compilado coloca todas as propriedades definidas
+///
+/// @example scss - Uso
+///   .class1 {
+///     @include show-element;
+///   }
+///
+/// @example css - Compilado
+///   .class1 {
+///     position: absolute;
+///     width: 1px;
+///     height: 1px;
+///     overflow: hidden;
+///     clip: rect(1px, 1px, 1px, 1px);
+///     border: 0;
+///   }
+@mixin show-element {
+  position: initial;
+  width: initial;
+  height: initial;
+  overflow: initial;
+  clip: initial;
+  border: initial;
+}

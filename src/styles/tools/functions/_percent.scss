@@ -1,0 +1,45 @@
+/// Calcula a percentagem que um valor representa com respeito a outro fazendo
+/// uma regra de três simples.
+///
+/// @group   Tools [Ferramentas]
+///
+/// @return  {number} - Valor expressado em percentagem `%`
+///
+/// @param   {number} $value - Valor a ser convertido
+/// @param   {number} $base - Valor base para calculo, ou seja, o valor
+///                           correspondente a 100%
+/// @param   {number} $decimals [2] - Quantidade de decimais (pontos flutuantes) no
+///                                retorno da função
+///
+/// @example scss - Uso
+///   .class {
+///     width: 50px;
+///     background-size: percent(10px, 50px);
+///   }
+///   .class-2 {
+///     width: 5em;
+///     font-size: percent(2.55em, $base: 5em);
+///   }
+///
+/// @example scss - Compilado
+///   .class {
+///     width: 50px;
+///     background-size: 20%;
+///   }
+///   .class-2 {
+///     width: 5em;
+///     font-size: 51%;
+///   }
+@function percent($value, $base, $decimals: 2) {
+  $result: null;
+
+  @if not type-of($value) == 'number' or not type-of($base) == 'number' {
+    @warn '#{$base} precisa ser do tipo numero';
+  } @else {
+    $calc-result: (_clean-unit($value) * 100) / _clean-unit($base);
+
+    $result: _decimal-floor($calc-result, $decimals) * 1%;
+  }
+
+  @return $result;
+}

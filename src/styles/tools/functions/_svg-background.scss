@@ -1,0 +1,45 @@
+/// Função para montar a url de um background svg.
+///
+/// Os parámetros de largura e altura, serão convertidos em números inteiros,
+/// caso seja passado um valor com ponto flutuante (decimais)
+///
+/// Para melhor organização, adicionar o conteudo do svg em uma constante global.
+/// Ex: $svg-error-icon: '<path d=" M 0.696 2.567 L 3.129 5 L 0.696 7.433 C 0.01 8.119 -0.302 8.93 0.384 9.616 C 1.07 10.302 1.881 9.99 2.567 9.304 L 5 6.871 L 7.433 9.304 C 8.119 9.99 8.93 10.302 9.616 9.616 C 10.302 8.93 9.99 8.119 9.304 7.433 L 6.871 5 L 9.304 2.567 C 9.99 1.881 10.302 1.071 9.616 0.384 C 8.93 -0.302 8.119 0.01 7.433 0.696 L 5 3.129 L 2.567 0.696 C 1.881 0.01 1.07 -0.302 0.384 0.384 C -0.302 1.071 0.01 1.881 0.696 2.567 Z "/>';
+///
+/// **Observação importante:** Esta função deve ser utilizada apenas para
+/// backgrounds svg de **cor única**!
+///
+/// @group   Tools [Ferramentas]
+/// @access  private
+///
+/// @param   {string} $svg-content - Conteúdo da tag `svg` depois de limpada
+/// @param   {color} $svg-color - Cor de preenchimento do desenho todo
+/// @param   {number} $width [24] - Largura do svg. Deve ser número inteiro
+/// @param   {number} $height [24] - Altura do svg. Deve ser número inteiro
+/// @param   {color} $svg-stroke [null] - Cor de preenchimento da borda
+///
+/// @return  {string} - URL pronta com a tag svg para aplicação como background
+@function _svg-background(
+  $svg-content,
+  $svg-color,
+  $width: $icon-size-base,
+  $height: $icon-size-base,
+  $svg-stroke: null
+) {
+  $width: _clean-unit(round($width));
+  $height: _clean-unit(round($height));
+
+  @if $svg-color != none and $svg-color != transparent {
+    // é necessário para o FF 31 =[
+    $svg-color: 'rgb(#{red($svg-color), green($svg-color), blue($svg-color)})';
+  }
+
+  @if $svg-stroke != null {
+    $svg-stroke: 'stroke="rgb(#{red($svg-stroke), green($svg-stroke), blue($svg-stroke)})"';
+  }
+
+  $svg-tag-init: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="#{$width}" height="#{$height}" fill="#{$svg-color}" #{$svg-stroke}>';
+  $svg-tag-end: '</svg>';
+
+  @return 'data:image/svg+xml;utf8,#{$svg-tag-init}#{$svg-content}#{$svg-tag-end}';
+}

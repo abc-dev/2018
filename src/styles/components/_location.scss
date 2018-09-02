@@ -1,0 +1,26 @@
+.location {
+  .wrapper {
+    @include respond-to(large) {
+      @include clearfix;
+
+      div {
+        float: left;
+        width: 50%;
+        text-align: left;
+      }
+    }
+  }
+
+  iframe {
+    display: none;
+
+    @include respond-to(large) {
+      display: block;
+      float: right;
+      margin: {
+        top: space(large);
+        bottom: space(large);
+      };
+    }
+  }
+}

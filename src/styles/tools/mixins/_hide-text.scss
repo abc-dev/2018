@@ -1,0 +1,23 @@
+/// Mixin que some com o texto de um elemento fazendo ele ser acessível aos
+/// leitores de tela
+///
+/// @group   Tools [Ferramentas]
+/// @output  Quando compilado coloca todas as propriedades definidas
+///
+/// @example scss - Uso
+///   .class1 {
+///     @include hide-text;
+///   }
+///
+/// @example css - Compilado
+///   .class1 {
+///     text-indent: 200%;
+///     white-space: nowrap;
+///     overflow: hidden;
+///   }
+@mixin hide-text {
+  overflow: hidden;
+
+  text-indent: 200%;
+  white-space: nowrap;
+}

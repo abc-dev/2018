@@ -1,0 +1,27 @@
+@mixin separator($color-a, $color-b) {
+  $this-border-width: rem(3px);
+
+  position: relative;
+  margin-top: space(xlarge);
+  padding-top: space(xlarge);
+
+  &::before,
+  &::after {
+    @include css-content(30vw, $this-border-width);
+
+    position: absolute;
+    left: 50%;
+  }
+
+  &::before {
+    top: 0;
+    background-color: $color-a;
+    transform: translateX(-80%);
+  }
+
+  &::after {
+    top: $this-border-width *2;
+    background-color: $color-b;
+    transform: translateX(-25%);
+  }
+}

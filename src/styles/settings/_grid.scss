@@ -1,0 +1,12 @@
+/// Mapa de configuração para criação do *grid*
+/// @group   Settings [Configurações]
+$grid: (
+  columns: 12,
+  spacement: 20px,
+  flex-size: (
+    max-width: 100%
+  ),
+  fixed-size: (
+    max-width: 100vw
+  )
+) !default;

@@ -1,0 +1,39 @@
+/// Mixin que atribui a largura e margem de um elemento com base na colunagem do
+/// grid. Como padrão este mixin adiciona margem à esquerda dos elementos para
+/// fazer a separação das colunas de acordo com o `gutter` do grid. Caso seja o
+/// primeiro elemento da linha (row), deve ser passado o valor `true` para o
+/// parâmetro "is-first"
+///
+/// @group   Tools [Ferramentas]
+/// @output  Quando compilado coloca todas as propriedades definidas no mixin
+///
+/// @param   {number} $columns - Quantidade de colunas desejadas
+/// @param   {bool} $is-first [false] - Determina se é a primeira coluna da linha
+///                 (row) de elementos colunados.
+///
+/// @example scss - Uso
+///   .classe-elemento-colunado {
+///     @include column(4);
+///   }
+///
+/// @example css - Compilado;
+///   .classe-elemento-colunado {
+///     width: calc(33.33333333% - 40px);
+///     margin-left: 1.25rem;
+///   }
+@mixin column($columns) {
+  $grid-max-columns: map-get($grid, columns);
+
+  @if type-of($columns) != number {
+    @warn 'O valor de "$columns" precisa ser um numero';
+  } @else if $columns > $grid-max-columns {
+    @warn 'O valor de "$columns" precisa ser menor ou igual a #{$grid-max-columns}';
+  } @else {
+    width: column($columns);
+
+    margin: {
+      right: space(grid) / 2;
+      left: space(grid) / 2;
+    };
+  }
+}

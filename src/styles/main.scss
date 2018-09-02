@@ -1,0 +1,138 @@
+@import "./import-core-tools";
+@import "./import-core-settings";
+@import "./settings";
+@import "./objects/reset";
+@import "./components/separator";
+@import "./components/header";
+@import "./components/main-nav";
+@import "./components/about";
+@import "./components/speakers";
+@import "./components/schedule";
+@import "./components/location";
+@import "./components/sponsors";
+@import "./components/contact";
+@import "./components/footer";
+
+body {
+  font-family: "Lato", sans-serif;
+  color: color(dark);
+}
+
+h1 {
+  font-size: font-size(xlarge);
+}
+
+h2 {
+  font-size: font-size(xlarge);
+  font-weight: bold;
+  margin-bottom: space(medium);
+  color: color(dark, darkest);
+  padding-top: space(medium);
+
+  &::before,
+  &::after {
+    color: color(primary);
+    font-weight: bold;
+  }
+
+  &::before {
+    content: "<";
+    margin-right: em(space(xsmall));
+  }
+
+  &::after {
+    content: ">";
+    margin-left: em(space(xsmall));
+  }
+}
+
+h3 {
+  font-size: font-size(large);
+  font-weight: bold;
+  margin: space(xlarge) 0 space(medium);
+  color: color(dark, darkest);
+
+  @include respond-to(large) {
+    font-size: font-size(xlarge);
+  }
+}
+
+svg {
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+
+  font-weight: bold;
+  color: color(dark, darkest);
+  display: inline-block;
+  border-bottom: solid rem(2px) color(dark);
+  padding: rem(3px) rem(5px);
+
+  &:hover,
+  &:focus {
+    background-color: color(primary, light);
+  }
+
+  &:active {
+    background-color: color(light);
+  }
+}
+
+p {
+  width: 100%;
+  max-width: rem(700px);
+  margin: {
+    left: auto;
+    right: auto;
+  };
+
+  + p {
+    margin-top: space(medium);
+  }
+}
+
+strong {
+  font-weight: bold;
+  color: color(dark, darkest);
+}
+
+table {
+  max-width: 100%;
+}
+
+section {
+  width: 100%;
+  padding: {
+    top: space(large);
+    bottom: space(large);
+  };
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: {
+    top: space(medium);
+    bottom: space(medium);
+  };
+  width: 85vw;
+  max-width: 100%;
+  text-align: center;
+
+  @include respond-to(large) {
+    max-width: rem(1100px);
+  }
+}
+
+.highlight {
+  font-weight: bold;
+  margin: space(large) auto space(medium);
+  max-width: 100%;
+
+  @include respond-to(large) {
+    font-size: font-size(large);
+  }
+}

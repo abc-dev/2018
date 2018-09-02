@@ -1,0 +1,103 @@
+/// Mixin para criar triângulos inseridos em pseudo-elementos `::after` e
+/// `::before`
+///
+/// @group   Tools [Ferramentas]
+///
+/// @param   {string} $direction - Direção do vértice do triângulo (topo). Pode
+///          ser `top`, `right`, `bottom` ou `left`
+/// @param   {color} $color - Cor utilizada no preenchimento do triângulo
+/// @param   {number} $width [1em] - Largura (base) do triângulo
+/// @param   {number} $height [$width] - Altura do triângulo. Se nenhuma altura
+///          for especificada, a largura será utilizada como base para definí-la
+///
+/// @example scss - Uso
+///   strong {
+///     &::before {
+///       @include triangle(
+///         $direction: bottom,
+///         $color: color(primary),
+///         $width: 1rem,
+///         $height: 2rem
+///       );
+///     }
+///   }
+///
+///   span {
+///     &::before {
+///       @include triangle(
+///         $direction: top,
+///         $color: color(success),
+///         $width: 20px
+///       );
+///     }
+///   }
+///
+///   em {
+///     &::before {
+///       @include triangle(
+///         $direction: left,
+///         $color: color(warning)
+///       );
+///     }
+///   }
+///
+/// @example scss - Compilado
+///   strong::before {
+///     content: '';
+///     width: 0;
+///     height: 0;
+///     border-top: 2rem solid #1381ce;
+///     border-bottom: 0 solid transparent;
+///     border-right: 0.5rem solid transparent;
+///     border-left: 0.5rem solid transparent;
+///   }
+///
+///   span::before {
+///     content: '';
+///     width: 0;
+///     height: 0;
+///     border-bottom: 10px solid #28aa46;
+///     border-top: 0 solid transparent;
+///     border-right: 10px solid transparent;
+///     border-left: 10px solid transparent;
+///   }
+///
+///   em::before {
+///     content: '';
+///     width: 0;
+///     height: 0;
+///     border-right: 0.5em solid #ffb413;
+///     border-left: 0 solid transparent;
+///     border-top: 0.5em solid transparent;
+///     border-bottom: 0.5em solid transparent;
+///   }
+@mixin triangle($direction, $color, $width: 1em, $height: null) {
+  @if not index(top right bottom left, $direction) {
+    @warn 'A variavel "$direction" informada (`#{$direction}`) deve ser `top`, `right`, `bottom` ou `left`!';
+  } @else if type-of($color) != color {
+    @warn '"$color" deve ser uma cor valida!';
+  } @else {
+    $height: if($height == null, $width * .5, $height);
+    $perpendicular-borders: ($width * .5) solid transparent;
+
+    content: '';
+
+    width: 0;
+    height: 0;
+
+    border-#{_opposite-direction($direction)}: $height solid $color;
+    border-#{$direction}: 0 solid transparent;
+
+    @if $direction == top or $direction == bottom {
+      border: {
+        right: $perpendicular-borders;
+        left: $perpendicular-borders;
+      }
+    } @else if $direction == right or $direction == left {
+      border: {
+        top: $perpendicular-borders;
+        bottom: $perpendicular-borders;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/// Retorna o valor correspondente à camada no mapa `$z-index`
+/// @group   Tools [ferramentas]
+///
+/// @return  {number} - Valor desejado
+///
+/// @param   {number} $layer-key - Nome da camada
+///
+/// @example scss - Uso
+///   .classe-1 {
+///     z-index: layer(low);
+///   }
+///   .classe-2 {
+///     z-index: layer(low) + 3;
+///   }
+///
+/// @example scss - Compilado
+///   .classe-1 {
+///     z-index: -1;
+///   }
+///   .classe-2 {
+///     z-index: 2;
+///   }
+@function layer($layer-key) {
+  @if not variable-exists(z-index) {
+    @warn 'O mapa de camadas `$z-index` nao existe!';
+    @return null;
+  }
+
+  @return map-get($z-index, $layer-key);
+}

@@ -1,0 +1,205 @@
+/// Mixin que adiciona as margens laterais (padrão) entre a view e o conteúdo
+/// geral. É permitido informar qualquer propriedade para inserir e também se os
+/// valores inseridos serão negativos (veja nos exemplos de uso)
+///
+/// @group   Tools [Ferramentas]
+///
+/// @param {string} $property [padding] - Propriedade em que se deseja o valor.
+///                                       As opções são: 'padding' e 'margin'
+///
+/// @output  Quando compilado coloca todas as propriedades definidas e as media
+///          querie correspondente
+///
+/// @example scss - Uso
+///   .classe-1 {
+///     @include view-margins;
+///   }
+///
+///   .classe-2 {
+///     @include view-margins(right);
+///   }
+///
+///   .classe-3 {
+///     @include view-margins((negative: margin));
+///   }
+///
+///   .classe-4 {
+///     @include view-margins((negative: margin), padding);
+///   }
+///
+///   .classe-5 {
+///     @include view-margins(margin, (negative: padding));
+///   }
+///
+/// @example css - Compilado
+///   .classe-1 {
+///     padding-right: 6vw;
+///     padding-left: 6vw;
+///   }
+///   @media (min-width: 35.375em) {
+///     .classe-1 {
+///       padding-right: 3vw;
+///       padding-left: 3vw;
+///     }
+///   }
+///   @media (min-width: 48em) {
+///     .classe-1 {
+///       padding-right: 3vw;
+///       padding-left: 3vw;
+///     }
+///   }
+///   @media (min-width: 62em) {
+///     .classe-1 {
+///       padding-right: 4vw;
+///       padding-left: 4vw;
+///     }
+///   }
+///   @media (min-width: 75em) {
+///     .classe-1 {
+///       padding-right: 3.5vw;
+///       padding-left: 3.5vw;
+///     }
+///   }
+///
+///   .classe-2 {
+///     right: 6vw;
+///   }
+///   @media (min-width: 35.375em) {
+///     .classe-2 {
+///       right: 3vw;
+///     }
+///   }
+///   @media (min-width: 48em) {
+///     .classe-2 {
+///       right: 3vw;
+///     }
+///   }
+///   @media (min-width: 62em) {
+///     .classe-2 {
+///       right: 4vw;
+///     }
+///   }
+///   @media (min-width: 75em) {
+///     .classe-2 {
+///       right: 3.5vw;
+///     }
+///   }
+///
+///   .classe-3 {
+///     margin: -6vw;
+///   }
+///   @media (min-width: 35.375em) {
+///     .classe-3 {
+///       margin: -3vw;
+///     }
+///   }
+///   @media (min-width: 48em) {
+///     .classe-3 {
+///       margin: -3vw;
+///     }
+///   }
+///   @media (min-width: 62em) {
+///     .classe-3 {
+///       margin: -4vw;
+///     }
+///   }
+///   @media (min-width: 75em) {
+///     .classe-3 {
+///       margin: -3.5vw;
+///     }
+///   }
+///
+///   .classe-4 {
+///     margin: -6vw;
+///     padding: 6vw;
+///   }
+///   @media (min-width: 35.375em) {
+///     .classe-4 {
+///       margin: -3vw;
+///       padding: 3vw;
+///     }
+///   }
+///   @media (min-width: 48em) {
+///     .classe-4 {
+///       margin: -3vw;
+///       padding: 3vw;
+///     }
+///   }
+///   @media (min-width: 62em) {
+///     .classe-4 {
+///       margin: -4vw;
+///       padding: 4vw;
+///     }
+///   }
+///   @media (min-width: 75em) {
+///     .classe-4 {
+///       margin: -3.5vw;
+///       padding: 3.5vw;
+///     }
+///   }
+///
+///   .classe-5 {
+///     margin: 6vw;
+///     padding: -6vw;
+///   }
+///   @media (min-width: 35.375em) {
+///     .classe-5 {
+///       margin: 3vw;
+///       padding: -3vw;
+///     }
+///   }
+///   @media (min-width: 48em) {
+///     .classe-5 {
+///       margin: 3vw;
+///       padding: -3vw;
+///     }
+///   }
+///   @media (min-width: 62em) {
+///     .classe-5 {
+///       margin: 4vw;
+///       padding: -4vw;
+///     }
+///   }
+///   @media (min-width: 75em) {
+///     .classe-5 {
+///       margin: 3.5vw;
+///       padding: -3.5vw;
+///     }
+///   }
+@mixin view-margins($properties...) {
+  @if length($properties) == 0 {
+    $properties: (padding-right, padding-left);
+  }
+
+  @each $property in $properties {
+    $this-value: map-get($view-margins, nth(map-keys($view-margins), 1));
+
+    @if type-of($property) == map {
+      $prop-name: map-values($property);
+
+      @if $this-value {
+        #{$prop-name}: $this-value * -1;
+      }
+    } @else {
+      #{$property}: $this-value;
+    }
+  }
+
+  @each $breakpoint, $value in $breakpoints {
+    @include respond-to($breakpoint) {
+      @each $property in $properties {
+        $this-value: map-get($view-margins, $breakpoint);
+
+        @if type-of($property) == map {
+          $prop-name: map-values($property);
+
+          @if $this-value {
+            #{$prop-name}: $this-value * -1;
+          }
+        } @else {
+          #{$property}: $this-value;
+        }
+      }
+    }
+  }
+}

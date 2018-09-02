@@ -84,6 +84,7 @@ a {
 
 p {
   width: 100%;
+  max-width: rem(700px);
   margin: {
     left: auto;
     right: auto;
@@ -126,5 +127,10 @@ section {
 
 .highlight {
   font-weight: bold;
-  margin: space(large) 0 space(medium);
+  margin: space(large) auto space(medium);
+  max-width: 100%;
+
+  @include respond-to(large) {
+    font-size: font-size(large);
+  }
 }

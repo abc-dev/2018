@@ -1,4 +1,8 @@
 .sponsors {
+  h3 {
+    @include separator(color(primary), color(dark, medium));
+  }
+
   a {
     margin: {
       top: space(small);

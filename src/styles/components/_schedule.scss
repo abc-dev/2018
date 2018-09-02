@@ -1,67 +1,114 @@
 .schedule {
   background: color( secondary);
   color: color(light);
+  padding-bottom: space(large);
+
+  .wrapper {
+    max-width: 100%;
+  }
+
+  .schedule-table {
+    max-width: 100%;
+    overflow-x: auto;
+
+    @include respond-to(large) {
+      overflow-x: initial;
+    }
+  }
+
+  .mobile-disclaimer {
+    color: color(dark, light);
+    font-style: italic;
+
+    @include respond-to(large) {
+      display: none;
+    }
+  }
 
   h2 {
+    color: color(light);
+  }
+
+  a {
+    color: color(light);
+    border-bottom: solid rem(2px) color(primary);
+    margin-bottom: space(small);
+
+    &:hover,
+    &:focus {
+      color: color(dark, darkest);
+    }
+  }
+
+  .title {
     color: color(primary);
+    font-weight: bold;
+    font-size: font-size(large);
+    border: 0;
+    text-align: left;
+    padding-bottom: space(small);
   }
 
-  .track {
-    position: relative;
+  table {
+    width: 100%;
 
-    // &:after {
-    //   content: "";
-    //   background: color( primary);
-    //   border-radius: 50%;
-    //   position: absolute;
-    //   width: rem(20px);
-    //   height: rem(20px);
-
-    //   top: 100%;
-    //   left: 50%;
-
-    //   transform: translateX(-50%) translateY(50%);
-    // }
-
-    h4 {
-      font-size: font-size(large);
-      font-weight: bold;
+    div {
+      opacity: .8;
     }
-
-    // @include respond-to(medium)  {
-    //   max-width: rem(350px);
-    //   &:after {
-    //     top: 50%;
-    //     left: 100%;
-
-    //     transform: translateX(50%) translateY(100%);
-    //   }
-    //   &:last-child:after {
-    //     display: none;
-    //   }
-    // }
   }
 
-  .track-info {
-    margin: space(small) auto;
-    padding: space(medium);
-
-    position: relative;
-
-    h5 {
+  thead {
+    th {
       font-size: font-size(large);
+      vertical-align: middle;
     }
+  }
 
-    p {
-      font-size: font-size(large);
-    }
+  th {
+    text-align: center;
+    color: color(primary);
 
-    a {
+    span {
+      display: block;
       color: color(light);
+      font-size: font-size(small);
+    }
+  }
+
+  th,
+  td {
+    position: relative;
+    padding: space(medium, large);
+  }
+
+  tbody {
+    th,
+    td {
+      border-top: solid rem(1px) color(dark, light);
     }
 
-    // @include respond-to(medium)  {
-    //   margin: space(large) auto;
-    // }
+    [rowspan] {
+      border-left: solid rem(1px) color(dark, light);
+    }
+
+    [colspan="3"] {
+      background-color: rgba(color(light), .1);
+    }
+
+    td {
+      min-width: rem(280px);
+
+      @include respond-to(large) {
+        min-width: auto;
+      }
+    }
+  }
+
+  p {
+    max-width: 100%;
+  }
+
+  .highlight-uppercase {
+    text-transform: uppercase;
   }
 }

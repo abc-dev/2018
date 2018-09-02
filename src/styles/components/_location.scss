@@ -1,9 +1,4 @@
 .location {
-  padding: {
-    top: space(large);
-    bottom: space(large);
-  };
-
   .wrapper {
     @include respond-to(large) {
       @include clearfix;

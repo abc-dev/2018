@@ -69,12 +69,12 @@ a {
   font-weight: bold;
   color: color(dark, darkest);
   display: inline-block;
-  border-bottom: solid rem(2px) color(primary, medium);
-  padding: rem(3px);
+  border-bottom: solid rem(2px) color(dark);
+  padding: rem(3px) rem(5px);
 
   &:hover,
   &:focus {
-    background-color: color(primary);
+    background-color: color(primary, light);
   }
 
   &:active {

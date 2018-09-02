@@ -21,6 +21,7 @@
     height: auto;
     padding-top: unset;
     position: relative;
+    text-align: right;
   }
 
   a {
@@ -32,20 +33,12 @@
 
     font-size: font-size(large);
     text-transform: uppercase;
-    border-bottom: solid rem(4px) color(primary);
 
     @include respond-to(medium) {
       display: inline-block;
       text-transform: none;
 
-      color: color(light);
-
-      padding: rem(4px);
-    }
-
-    &:hover {
-      background-color: darken(color(primary), 10%);
-      border-color: color(dark, darkest);
+      padding: rem(4px) rem(6px);
     }
   }
 
@@ -65,10 +58,12 @@
 }
 
 .social-media {
+  position: absolute;
+  bottom: space(medium);
+  right: 0;
   word-spacing: space(medium);
 
   a {
-    color: color(light, dark);
     border-radius: 50%;
     border: 0;
     padding: rem(2px);

@@ -1,6 +1,6 @@
 .cover {
   background: {
-    // image: url(../images/backgrounds/sao-caetano-do-sul.jpg);
+    image: url(../images/backgrounds/sao-caetano-do-sul.jpg);
     size: cover;
     repeat: no-repeat;
     color: rgba(color(dark, darkest), .3);
@@ -13,15 +13,13 @@
   min-height: 100vh;
   overflow: hidden;
 
-  @include respond-to(medium) {
+  @include respond-to(large) {
     background: {
       // image: url(../images/backgrounds/sao-bernardo-do-campo.jpg);
       size: auto;
       position: bottom right;
       color: rgba(color(dark, darkest), .3);
     };
-
-    color: color(dark);
 
     height: 100vh;
   }
@@ -32,7 +30,7 @@
 
     display: none;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       display: block;
     }
 
@@ -47,64 +45,98 @@
   }
 
   &::before {
-    transform: skewY(13deg) translateY(-65vh);
-    // background-image: url(../images/backgrounds/santo-andre.jpg);
+    transform: skewY(13deg) translateY(-63vh);
+
     background: {
-      color: rgba(color(light), .3);
-      position: center;
+      // image: url(../images/backgrounds/santo-andre.jpg);
+      // image: url(../images/backgrounds/sao-bernardo-do-campo.jpg);
+      color: rgba(color(light), .5);
+      position: 70% 0;
     };
+    opacity: .7;
   }
 
   &::after {
     // background-image: url(../images/backgrounds/sao-caetano-do-sul.jpg);
-    transform: skewY(-12deg) translateY(-20vh);
+    transform: skewY(-15deg) translateY(-28vh);
     background: {
       color: rgba(color(dark, darkest), .3);
     };
   }
 
+  .social-media {
+    position: absolute;
+    bottom: space(medium);
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(large) {
+      right: 0;
+      text-align: right;
+    }
+  }
+
   .wrapper {
     position: relative;
-    z-index: layer(medium);
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+
+    @include respond-to(large) {
+      z-index: layer(medium);
+      width: 100%;
+    }
   }
 
   time {
     display: block;
     margin: {
-      top: space(medium);
-      bottom: space(medium);
+      top: space(large);
+      bottom: space(large);
     }
 
     font-size: font-size(xxlarge);
     font-weight: bold;
     color: color(primary);
-    text-shadow: rem(1px) rem(1px) rem(3px) color(dark, darkest);
+    text-shadow: $shadow-base;
+
+    @include respond-to(large) {
+      margin-bottom: space(medium);
+    }
   }
 
   p {
     font-weight: bold;
+    margin-bottom: space(xlarge);
+
+    @include respond-to(large) {
+      margin-bottom: space(medium);
+    }
   }
 
   .logo {
+    position: relative;
     display: block;
     text-align: left;
     width: 50%;
     max-width: 330px;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       margin: space(large) auto;
       text-align: center;
+    }
+
+    img {
+      position: relative;
+      z-index: layer(medium);
     }
   }
 
   .intro {
-    color: color(dark, darkest);
+    color: color(light);
+    text-shadow: $shadow-base;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       position: absolute;
-      top: 50%;
+      top: 48%;
       left: 0;
       width: 50%;
       transform: translateY(-50%);
@@ -115,6 +147,7 @@
     }
 
     h2 {
+      color: color(light);
       display: none;
       margin: space(large) 0;
 
@@ -123,7 +156,7 @@
         content: none;
       }
 
-      @include respond-to(medium) {
+      @include respond-to(large) {
         display: block;
       }
     }
@@ -166,7 +199,7 @@
     transform: translateX(-50%);
 
     background-color: color(light);
-    box-shadow: $box-shadow-base;
+    box-shadow: $shadow-base;
 
     .mobile-nav {
       color: color(secondary);

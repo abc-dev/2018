@@ -47,7 +47,7 @@ $border-radius-base: rem(4px) !default;
 
 /// Sombra padrão para elementos
 /// @group   Settings [Configurações]
-$box-shadow-base: 0 rem(3px) rem(8px) 0 rgba(color(dark), .15) !default;
+$shadow-base: rem(1px) rem(1px) rem(3px) color(dark, darkest) !default;
 
 /// Largura base para conversão de medidas baseadas no layout do protótipo
 /// @group   Settings [Configurações]

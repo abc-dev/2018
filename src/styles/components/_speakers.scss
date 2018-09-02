@@ -1,5 +1,5 @@
 .speakers {
-  @include respond-to(medium) {
+  @include respond-to(large) {
     color: color(light);
 
     padding-bottom: space(xlarge) * 1.5;
@@ -8,7 +8,7 @@
   .all-speaker {
     max-width: rem(1080px);
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -23,7 +23,7 @@
 
   transition: filter 0.4s ease-in;
 
-  @include respond-to(medium) {
+  @include respond-to(large) {
     margin: 0;
     position: relative;
 
@@ -35,14 +35,14 @@
   }
 
   &:hover {
-    @include respond-to(medium) {
+    @include respond-to(large) {
       -webkit-filter: grayscale(1);
       -moz-filter: grayscale(1);
       filter: grayscale(1);
     }
 
     > .info {
-      @include respond-to(medium) {
+      @include respond-to(large) {
         background: rgba(0, 0, 0, 0.4);
         top: 100%;
 
@@ -67,7 +67,7 @@
     transition: background 3s linear;
     transition-delay: 1s;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       height: rem(350px);
       position: absolute;
 
@@ -81,7 +81,24 @@
     }
 
     h4 {
+      color: color(dark, darkest);
       font-size: font-size(large);
+
+      &::before,
+      &::after {
+        color: color(primary);
+        font-weight: bold;
+      }
+
+      &::before {
+        content: "<";
+        margin-right: em(space(xsmall));
+      }
+
+      &::after {
+        content: ">";
+        margin-left: em(space(xsmall));
+      }
     }
 
     a {
@@ -91,13 +108,13 @@
         bottom: space(small);
       };
 
-      @include respond-to(medium) {
+      @include respond-to(large) {
         color: color(light, dark);
       }
     }
 
     p {
-      @include respond-to(medium) {
+      @include respond-to(large) {
         font-size: font-size(small);
       }
     }

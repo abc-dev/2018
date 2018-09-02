@@ -1,4 +1,29 @@
 .sponsors {
+  a {
+    margin: {
+      top: space(small);
+      bottom: space(small);
+    };
+    padding: 0;
+    border: 0;
+
+    @include respond-to(large) {
+      margin: {
+        top: space(medium);
+        bottom: space(medium);
+      };
+    }
+
+    &:hover,
+    &:focus {
+      background-color: color(light, dark);
+    }
+
+    &:active {
+      background-color: color(primary, light);
+    }
+  }
+
   img {
     display: block;
     width: 100%;
@@ -14,16 +39,16 @@
   }
 
   .two-mega {
-    figure {
+    a {
       max-width: rem(320px);
-      margin: space(large);
     }
   }
 
   .one-mega {
     @include separator(color(primary), color(dark, medium));
 
-    figure {
+    a {
+      width: 65vw;
       max-width: rem(250px);
     }
   }
@@ -31,14 +56,14 @@
   .half-mega {
     @include separator(color(primary), color(dark, medium));
 
-    figure {
+    a {
+      width: 50vw;
       max-width: rem(180px);
     }
   }
 
   .support {
-    figure {
-      margin: space(medium);
+    a {
       max-width: rem(120px);
     }
   }

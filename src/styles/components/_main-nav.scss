@@ -14,14 +14,17 @@
 
   z-index: layer(high);
 
-  @include respond-to(medium) {
-    background-color: transparent;
+  @include respond-to(large) {
+    background-color: color(primary, light);
+    box-shadow: 0 0 rem(3px) color(dark, darkest);
     transform: translate(0);
     width: 100%;
     height: auto;
-    padding-top: unset;
-    position: relative;
-    text-align: right;
+    padding: space(xsmall);
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // text-align: right;
   }
 
   a {
@@ -34,16 +37,28 @@
     font-size: font-size(large);
     text-transform: uppercase;
 
-    @include respond-to(medium) {
+    @include respond-to(large) {
       display: inline-block;
       text-transform: none;
 
       padding: rem(4px) rem(6px);
+      margin: {
+        left: space(small);
+        right: space(small);
+      };
+      border: 0;
+    }
+
+    &:hover,
+    &:focus {
+      text-shadow: none;
+      color: color(light);
+      background-color: color(dark, darkest);
     }
   }
 
   .go-to-start {
-    @include respond-to(medium) {
+    @include respond-to(large) {
       display: none;
     }
 
@@ -58,9 +73,6 @@
 }
 
 .social-media {
-  position: absolute;
-  bottom: space(medium);
-  right: 0;
   word-spacing: space(medium);
 
   a {
@@ -85,7 +97,7 @@
   cursor: pointer;
 
   top: space(medium);
-  right: space(medium);
+  right: 0;
 
   height: rem(5px);
   width: rem(30px);
@@ -96,7 +108,7 @@
 
   z-index: layer(highest);
 
-  @include respond-to(medium) {
+  @include respond-to(large) {
     display: none;
   }
 

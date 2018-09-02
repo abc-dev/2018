@@ -29,20 +29,20 @@ h2 {
   color: color(dark, darkest);
   padding-top: space(medium);
 
+  &::before,
+  &::after {
+    color: color(primary);
+    font-weight: bold;
+  }
+
   &::before {
     content: "<";
-    color: color(dark, light);
     margin-right: em(space(xsmall));
   }
 
   &::after {
     content: ">";
-    color: color(dark, light);
     margin-left: em(space(xsmall));
-  }
-
-  @include respond-to(medium) {
-    font-size: font-size(xlarge);
   }
 }
 
@@ -52,7 +52,7 @@ h3 {
   margin: space(xlarge) 0 space(medium);
   color: color(dark, darkest);
 
-  @include respond-to(medium) {
+  @include respond-to(large) {
     font-size: font-size(xlarge);
   }
 }
@@ -119,7 +119,7 @@ section {
   max-width: 100%;
   text-align: center;
 
-  @include respond-to(medium) {
+  @include respond-to(large) {
     max-width: rem(1100px);
   }
 }

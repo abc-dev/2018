@@ -8,7 +8,7 @@
   color: color(light);
 
   position: relative;
-  z-index: layer(medium);
+  z-index: layer(high);
 
   min-height: 100vh;
   overflow: hidden;
@@ -73,6 +73,42 @@
     @include respond-to(large) {
       right: 0;
       text-align: right;
+    }
+  }
+
+  .hashtags {
+    display: none;
+
+    @include respond-to(large) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      max-width: 35%;
+      text-align: right;
+
+      font-size: font-size(large) * 2;
+
+      transform: translateY(-50%);
+      // background-color: rgba(color(dark, darkest), .4);
+      padding: space(small);
+    }
+
+    a {
+      text-shadow: $shadow-base;
+      color: color(light);
+      border-color: color(primary);
+
+      & + a {
+        margin-top: space(xsmall);
+      }
+
+      &:hover,
+      &:focus {
+        text-shadow: none;
+        color: color(dark, darkest);
+        border-color: color(dark, darkest);
+      }
     }
   }
 

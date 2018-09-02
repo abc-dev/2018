@@ -8,3 +8,4 @@ require('./tasks/browsersync.js');
 require('./tasks/watch.js');
 require('./tasks/default.js');
 require('./tasks/build.js');
+require('./tasks/deploy.js');

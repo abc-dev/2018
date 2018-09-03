@@ -1,8 +1,0 @@
-/// Constante utilizada para configurar o suporte mínimo de browser utilizado
-/// por funções *helpers* e componentes
-/// @group   Settings [Configurações]
-/// @access  private
-$browser-min-version: (
-  ie: 11,
-  firefox: 31
-) !default;

@@ -149,6 +149,7 @@
 
     position: fixed;
     right: space(large);
+    z-index: layer(highest) + 2;
 
     &:before,
     &:after {

@@ -9,6 +9,8 @@
     &::after {
       @include css-content(100%, 100vh);
 
+      max-height: rem(950px);
+
       position: absolute;
       top: 50%;
       z-index: layer(low);

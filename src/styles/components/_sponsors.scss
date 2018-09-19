@@ -43,8 +43,10 @@
   }
 
   .two-mega {
+    @include separator(color(primary), color(dark, medium));
+
     a {
-      max-width: rem(320px);
+      max-width: rem(270px);
     }
   }
 
@@ -53,7 +55,7 @@
 
     a {
       width: 65vw;
-      max-width: rem(250px);
+      max-width: rem(220px);
     }
   }
 
@@ -62,13 +64,13 @@
 
     a {
       width: 50vw;
-      max-width: rem(180px);
+      max-width: rem(150px);
     }
   }
 
   .support {
     a {
-      max-width: rem(120px);
+      max-width: rem(110px);
     }
   }
 }
